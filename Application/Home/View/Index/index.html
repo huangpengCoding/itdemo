@@ -1,0 +1,587 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- 系统设置开始   钟声 -->
+    <title>{$system['title']}</title>
+    <meta name="keywords" content="{$system['key']}"/>
+    <meta name="description" content="{$system['des']}"/>
+    <!-- 系统设置结束   钟声 -->
+    <meta property="qc:admins" content="2437241723066375"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Home/Css/style_2_common.css">
+    <link rel="stylesheet" type="text/css" href="/Public/Home/Css/style_2_portal_index.css">
+    <audio src="http://zhogn-app.smartgslb.com/du.php?text=%E6%AC%A2%E8%BF%8E%E6%82%A8%E8%AE%BF%E9%97%AEVR%E8%99%9A%E6%8B%9F%E7%8E%B0%E5%AE%9E%E7%BD%91%E7%AB%99"
+           autoplay="autoplay">
+        您的浏览器不支持 audio 标签。
+    </audio>
+    <script src="/Public/Home/Scripts/common.js" type="text/javascript"></script>
+    <script src="/Public/Home/Scripts/portal.js" type="text/javascript"></script>
+    <script src="/Public/Home/Scripts/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="/Public/Home/Scripts/zzsc.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var jq = jQuery.noConflict();
+    </script>
+</head>
+<body class="pg_index" onkeydown="if(event.keyCode==27) return false;">
+<div id="toptb" class="cl">
+    <div class="wp">
+        <div class="a"><h1 style="color: white;font-size: medium">{$system.description}</h1></div>
+        <div class="z">
+            <div id="scbar" class="cl">
+                <input type="hidden" name="" id="scbar_txt2" value=""/>
+
+                <form id="scbar_form" method="get" autocomplete="off" action="javascript:void(0);">
+                    <input type="hidden" name="field" value="1"/>
+                    <table cellspacing="0" cellpadding="0">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <input type="text" name="keyboard" id="scbar_txt" value="" autocomplete="off"
+                                       x-webkit-speech="" speech="" class=" xg1">
+                            </td>
+                            <td>
+                                <button type="submit" name="searchsubmit" id="scbar_btn" sc="1" class="pn pnc"
+                                        value="true" mid=""></button>
+                            </td>
+                        </tr>
+                        <!-- by tong 搜索的js -->
+                        <script type="text/javascript">
+                            jq('#scbar_txt').val('');
+                            //jq('#scbar_txt2').val('');
+                            jq('#scbar_form').submit(function () {
+                                var con = jq('#scbar_txt').val();
+                                var main = jq("#portal_block_31_content");     //主体元素
+                                if (con == '') {
+                                    alert('搜索内容不能为空');
+                                    return;
+                                } else {
+                                    //删除已经显示的记录条
+                                    jq('.countline').remove();
+                                    //jq('#scbar_txt').val('');
+                                    jq('#scbar_txt2').attr('value', con);
+                                    //send ajax 查询数据库
+                                    jq.ajax({
+                                        type: 'POST',
+                                        url: '__URL__/searchAjax',
+                                        data: 'con=' + con,
+                                        datatype: 'json',
+                                        success: function (data) {
+                                            var str = '';
+                                            var data = JSON.parse(data);
+                                            for (var i = 0; i < data.length; i++) {
+                                                str += '<li class="deanshadow deanw714 deanborder deanfff countline">';
+                                                str += '<div class="deanpiclic">';
+                                                str += '<div class="deanpiclicl">';
+                                                str += '<a href="/Home/Detail/single/id/' + data[i].info_detail_id + '" target="_blank"><img src="/Public/Admin/xheditor/upload/images/s220170_' + data[i].info_picname + '" title="' + data[i].info_detail_title + '" width="220" height="170"></a>';
+                                                str += '<a href="/Home/Detail/single/id/' + data[i].info_detail_id + '" target="_blank" class="deanhover" style="display: none;"></a>';
+                                                str += '</div>';
+                                                str += '<div class="deanpiclicr">';
+                                                str += '<h2><a href="/Home/Detail/single/id/' + data[i].info_detail_id + '" target="_blank" class="xi2" title="' + data[i].info_detail_title + '">' + data[i].info_detail_title + '</a> </h2>';
+                                                str += '<div class="clear"></div>';
+                                                str += '<div class="deanpicsummary">' + data[i].info_detail_abstract + '</div>';
+                                                str += '<div class="clear"></div>';
+                                                str += '<div class="deanliicon">';
+                                                str += '<div class="deanicontype"><a href="/Home/Detail/index/id/' + data[i].info_id + '" class="xi2">' + data[i].info_name + '</a></div>';
+                                                str += '<div class="deanicontype"><a href="/Home/Detail/keywords/id/' + data[i].info_id + '" class="xi2">' + data[i].info_detail_keywords + '</a></div>';
+                                                var d = new Date(data[i].info_detail_createtime * 1000);    //根据时间戳生成的时间对象
+                                                var date = (d.getFullYear()) + "-" + (d.getMonth() + 1) + "-" + (d.getDate()) + " " + (d.getHours()) + ":" + (d.getMinutes()) + ":" + (d.getSeconds());
+                                                str += '<div class="deanicondate">' + date + '</div>';
+                                                str += '<div class="deaniconcomment">' + data[i].info_detail_commentnum + '</div>';
+                                                str += '<div class="clear"></div>';
+                                                str += '</div>';
+                                                str += '<div class="clear"></div>';
+                                                str += '<a href="/Home/Detail/single/id/' + data[i].info_detail_id + '" target="_blank" class="deanread">查看详情</a>';
+                                                str += '</div>';
+                                                str += '<div class="clear"></div>';
+                                                str += '</div>';
+                                                str += '</li>';
+                                            }
+                                            if (str == '') {
+                                                return;
+                                            } else {
+                                                main.append(str);
+                                            }
+                                        }
+                                    });
+                                }
+                            });
+                        </script>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+            <script type="text/javascript">
+                /* initSearchmenu('scbar', ''); */
+            </script>
+            <if condition="$log eq 1">
+                <a href="/Home/Center/index">个人中心</a> <a href="/Home/Login/loginout">退出</a>
+                <elseif condition="$log eq 0"/>
+                <a href="/Home/Login/index" style="color: white;font-size: small;">注册/登录</a>
+            </if>
+        </div>
+    </div>
+</div>
+<div id="deanheader" style="">
+    <div class="deanwp">
+        <div class="deanlogo">
+            <h2><a href="{$system.url}" title="{$system.name}"><img src="/Public/Home/Images/{$system.logo}"
+                                                                    alt="{$system.name}" border="0" width="199"
+                                                                    height="58"></a></h2>
+        </div>
+        <div class="deannav" style="width:650px;">
+            <ul>
+                <!-- by tong  -->
+                <volist name="title" id="vo">
+                    <li>
+                        <a href="/Home/{$vo.url}/fid/{$vo.id}" hidefocus="true" title="{$vo.name}"
+                        <if condition="$vo.id eq $id">class="cur"</if>
+                        >{$vo.name}<span>{$vo.seo_remark}</span></a></li>
+                </volist>
+            </ul>
+        </div>
+        <div class="deandenglu" style="display:none">
+            <!-- <script src="/Public/Home/Scripts/loginjs.js"></script> -->
+            <script type="text/javascript">
+                jq(".deanhove").hover(
+                        function () {
+                            jq(this).addClass("deanhoved");
+                            jq(this).siblings(".deanmessage").show();
+                        },
+                        function () {
+                            jq(this).removeClass("deanhoved");
+                            jq(this).siblings(".deanmessage").hide();
+                        })
+                jq(".deanmessage").hover(
+                        function () {
+                            jq(this).siblings(".deanhove").addClass("deanhoved");
+                            jq(this).show();
+                        },
+                        function () {
+                            jq(this).siblings(".deanhove").removeClass("deanhoved");
+                            jq(this).hide();
+                        })
+            </script>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="clear"></div>
+
+<div id="wp" class="wp">
+    <div class="deanwp">
+        <div class="deanwpl">
+            <div class="deanhdp deanshadow deanw714 deanborder deanfff">
+                <div class="deanhdpc">
+                    <div class="deanhdpbig">
+                        <div id="diydeanzdy" class="area">
+                            <div id="frameLuuu6y" class="frame move-span cl frame-1">
+                                <div id="frameLuuu6y_left" class="column frame-1-c">
+                                    <div id="frameLuuu6y_left_temp" class="move-span temp"></div>
+                                    <div id="portal_block_43" class="block move-span">
+                                        <div id="portal_block_43_content" class="dxb_bc">
+                                            <div id="slideshow">
+                                                <!--<ul id="example1" class="timeliner"> -->
+                                                <div class="wrap960">
+                                                    <div class="shareLayout">
+                                                        <div class="shareList" id="shareList">
+                                                            <volist name="carousel" id="vo">
+                                                                <a href={$vo.href} target="_blank" title="{$vo.title}">
+                                                                    <img src="/Public/Home/Picture/{$vo.src}"
+                                                                         alt="{$vo.alt}"/>
+                                                                </a>
+                                                            </volist>
+                                                        </div>
+                                                        <div class="pageLayout" id="pageLayout">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <script>tomeLogin.init();</script>
+                                                <!--</ul> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="deanpiclist top15">
+                <ul>
+                    <div id="deanpiclist" class="area">
+                        <div id="frameyQAs60" class="frame move-span cl frame-1">
+                            <div id="frameyQAs60_left" class="column frame-1-c">
+                                <div id="frameyQAs60_left_temp" class="move-span temp"></div>
+                                <div id="portal_block_31" class="block move-span">
+                                    <div id="portal_block_31_content" class="dxb_bc">
+                                        <!-- by tong  -->
+                                        <volist name="list" id="vo">
+                                            <li class="deanshadow deanw714 deanborder deanfff countline">
+                                                <div class="deanpiclic">
+                                                    <div class="deanpiclicl">
+                                                        <a href="/Home/Detail/single/id/{$vo.info_detail_id}"
+                                                           target="_blank">
+                                                            <img src="./Public/Admin/xheditor/upload/images/s220170_{$vo.info_picname}"
+                                                                 title="{vo.info_detail_title}" width="220"
+                                                                 height="170">
+                                                        </a>
+                                                        <a href="/Home/Detail/single/id/{$vo.info_detail_id}"
+                                                           target="_blank" class="deanhover" style="display: none;"></a>
+                                                    </div>
+                                                    <div class="deanpiclicr">
+                                                        <h2><a href="/Home/Detail/single/id/{$vo.info_detail_id}"
+                                                               target="_blank" class="xi2"
+                                                               title="{vo.info_detail_title}">{$vo.info_detail_title}</a>
+                                                        </h2>
+
+                                                        <div class="clear"></div>
+                                                        <div class="deanpicsummary">{$vo.info_detail_abstract}</div>
+                                                        <div class="clear"></div>
+                                                        <div class="deanliicon">
+                                                            <div class="deanicontype"><a
+                                                                    href="/Home/Detail/index/id/{$vo.info_id}"
+                                                                    class="xi2">{$vo.info_name}</a></div>
+                                                            <div class="deanicontype"><a
+                                                                    href="/Home/Detail/keywords/id/{$vo.info_id}"
+                                                                    class="xi2">{$vo.info_detail_keywords}</a></div>
+                                                            <div class="deanicondate">
+                                                                {$vo.info_detail_createtime|date='Y-m-d H:i:s',###}
+                                                            </div>
+                                                            <div class="deaniconcomment">{$vo.info_detail_commentnum}
+                                                            </div>
+                                                            <div class="clear"></div>
+                                                        </div>
+                                                        <div class="clear"></div>
+                                                        <a href="/Home/Detail/single/id/{$vo.info_detail_id}"
+                                                           target="_blank" class="deanread">查看详情</a>
+                                                    </div>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </li>
+                                        </volist>
+                                        <script type="text/javascript">
+
+                                            jq(function () {
+
+                                                var range = 50;             //距下边界长度/单位px
+                                                var elemt = 500;           //插入元素高度/单位px
+                                                var maxnum = 20;            //设置加载最多次数
+                                                var num = 1;
+                                                var totalheight = 0;
+                                                var main = jq("#portal_block_31_content");     //主体元素
+                                                var con = jq('#scbar_txt2').val(); //搜索框中的内容
+                                                //alert(range);
+                                                jq(window).scroll(function () {
+                                                    var srollPos = jq(window).scrollTop();    //滚动条距顶部距离(页面超出窗口的高度)
+                                                    /* console.log("滚动条到顶部的垂直高度: "+jq(document).scrollTop());
+                                                     console.log("页面的文档高度 ："+jq(document).height());
+                                                     console.log('浏览器的高度：'+jq(window).height()); */
+
+                                                    totalheight = parseFloat(jq(window).height()) + parseFloat(srollPos);
+                                                    if ((jq(document).height() - range) <= totalheight) {
+                                                        //ajax请求数据
+                                                        //获取已有的数据记录数
+                                                        if (num == jq('.countline').size()) {
+                                                            //main.append("<div style='border:1px solid tomato;margin-top:20px;color:#ac;'>没有可加载的数据</div>");
+                                                            return;
+                                                        }
+                                                        //alert(con);
+                                                        num = jq('.countline').size();
+                                                        jq.ajax({
+                                                            type: 'POST',
+                                                            url: '/Home/Index/doAjax',
+                                                            data: 'num=' + num + '&con=' + con,
+                                                            datatype: 'json',
+                                                            success: function (data) {
+                                                                var str = '';
+                                                                var data = JSON.parse(data);
+                                                                for (var i = 0; i < data.length; i++) {
+                                                                    str += '<li class="deanshadow deanw714 deanborder deanfff countline">';
+                                                                    str += '<div class="deanpiclic">';
+                                                                    str += '<div class="deanpiclicl">';
+                                                                    str += '<a href="/Home/Detail/single/id/' + data[i].info_detail_id + '" target="_blank"><img src="/Public/Admin/xheditor/upload/images/s220170_' + data[i].info_picname + '" title="' + data[i].info_detail_title + '" width="220" height="170"></a>';
+                                                                    str += '<a href="/Home/Detail/single/id/' + data[i].info_detail_id + '" target="_blank" class="deanhover" style="display: none;"></a>';
+                                                                    str += '</div>';
+                                                                    str += '<div class="deanpiclicr">';
+                                                                    str += '<h2><a href="/Home/Detail/single/id/' + data[i].info_detail_id + '" target="_blank" class="xi2" title="' + data[i].info_detail_title + '">' + data[i].info_detail_title + '</a> </h2>';
+                                                                    str += '<div class="clear"></div>';
+                                                                    str += '<div class="deanpicsummary">' + data[i].info_detail_abstract + '</div>';
+                                                                    str += '<div class="clear"></div>';
+                                                                    str += '<div class="deanliicon">';
+                                                                    str += '<div class="deanicontype"><a href="/Home/Detail/index/id/' + data[i].info_id + '" class="xi2">' + data[i].info_name + '</a></div>';
+                                                                    str += '<div class="deanicontype"><a href="/Home/Detail/keywords/id/' + data[i].info_id + '" class="xi2">' + data[i].info_detail_keywords + '</a></div>';
+                                                                    var d = new Date(data[i].info_detail_createtime * 1000);    //根据时间戳生成的时间对象
+                                                                    var date = (d.getFullYear()) + "-" + (d.getMonth() + 1) + "-" + (d.getDate()) + " " + (d.getHours()) + ":" + (d.getMinutes()) + ":" + (d.getSeconds());
+                                                                    str += '<div class="deanicondate">' + date + '</div>';
+                                                                    str += '<div class="deaniconcomment">' + data[i].info_detail_commentnum + '</div>';
+                                                                    str += '<div class="clear"></div>';
+                                                                    str += '</div>';
+                                                                    str += '<div class="clear"></div>';
+                                                                    str += '<a href="/Home/Detail/single/id/' + data[i].info_detail_id + '" target="_blank" class="deanread">查看详情</a>';
+                                                                    str += '</div>';
+                                                                    str += '<div class="clear"></div>';
+                                                                    str += '</div>';
+                                                                    str += '</li>';
+                                                                }
+                                                                if (str == '') {
+                                                                    return;
+                                                                } else {
+                                                                    main.append(str);
+                                                                }
+                                                                if (data == null) {
+                                                                    main.append("<div style='border:1px solid tomato;margin-top:20px;color:#ac;'>没有可加载的数据</div>");
+                                                                }
+                                                            },
+                                                            error: function () {
+                                                                alert('数据加载出错！');
+                                                            }
+                                                        });
+                                                    }
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ul>
+                <a href="http://www.vr186.com/vr_news/" style="float:right; padding:0 35px">查看更多</a></div>
+            <script type="text/javascript">
+                jq(".deanpiclist ul li").each(function (s) {
+                    jq(".deanpiclicl").hover(
+                            function () {
+                                jq(this).children(".deanhover").show();
+                            },
+                            function () {
+                                jq(this).children(".deanhover").hide();
+                            })
+                })
+            </script>
+            <div class="clear"></div>
+        </div>
+        <div class="deanwpr">
+            <div class="deanwprc deanshadow deanborder deanfff">
+                <div class="deanp14">
+                    <div class="clear"></div>
+                    <div class="deanactive ">
+                        <ul><!--[diy=deanactive]-->
+                            <div id="deanactive" class="area">
+                                <div id="framepnT7bb" class="frame move-span cl frame-1">
+                                    <div id="framepnT7bb_left" class="column frame-1-c">
+                                        <div id="framepnT7bb_left_temp" class="move-span temp"></div>
+                                        <div id="portal_block_35" class="block move-span">
+                                            <div id="portal_block_35_content" class="dxb_bc">
+                                                <volist name='harpro' id='vc'>
+                                                    <li>
+                                                        <div class="deanactivel">
+                                                            <a href="/Home/Harpro/item/id/{$vc.id}"
+                                                               target="_blank">
+                                                                <img src="/Public/Uploads/s_{$vc.icon}" width="107"
+                                                                     alt="{$vc.name}" height="68">
+                                                            </a>
+                                                        </div>
+                                                        <div class="deanactiver">
+                                                            <h3>
+                                                                <a href="/Home/Harpro/item/id/{$vc.id}"
+                                                                   title="{$vc.name}" target="_blank">{$vc.name}</a>
+                                                            </h3>
+
+                                                            <div class="clear"></div>
+                                                            <div class="deanactivesummary">
+                                                                <volist name="harcat" id="bb">
+                                                                    <if condition="$vc['cid'] eq $bb['id']">{$bb.name}
+                                                                    </if>
+                                                                </volist>
+                                                                <volist name="factory" id="vb">
+                                                                    <if condition="$vc['fid'] eq $vb['id']">
+                                                                        ({$vb.name})
+                                                                    </if>
+                                                                </volist>
+                                                            </div>
+                                                            <div class="clear"></div>
+                                                            <a href="/Home/Harpro/item/id/{$vc.id}" target="_blank"
+                                                               class="deanattend">查看硬件</a>
+                                                        </div>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                </volist>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--[/diy]--></ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="deanwprc deanshadow deanborder deanfff">
+                <div class="deanp14">
+                    <div class="clear"></div>
+                    <div class="deanactive index_zy">
+                        <h2>热门资源下载 <a href="/Home/Res/">更多</a></h2>
+
+                        <div class="deantabs top25">
+                            <ul class="deantabname">
+                                <li class="cur">热门搜索</li>
+                                <li>专题推荐</li>
+                                <div class="clear"></div>
+                            </ul>
+                            <div class="clear"></div>
+                            <ul class="deantabc top15">
+                                <li style="display:block;"><!--[diy=deantabc1]-->
+                                    <div id="deantabc1" class="area">
+                                        <div id="framewbBJor" class="frame move-span cl frame-1">
+                                            <div id="framewbBJor_left" class="column frame-1-c">
+                                                <div id="framewbBJor_left_temp" class="move-span temp"></div>
+                                                <div id="portal_block_36" class="block move-span">
+                                                    <div id="portal_block_36_content" class="dxb_bc">
+                                                        <div class="portal_block_summary searchkey">
+                                                            <volist name="hot_search" id="vo">
+                                                                <a>{$vo.key}</a>
+                                                            </volist>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--[/diy]--></li>
+                                <li><!--[diy=deantabc2]-->
+                                    <div id="deantabc2" class="area">
+                                        <div id="framepL5TLW" class="frame move-span cl frame-1">
+                                            <div id="framepL5TLW_left" class="column frame-1-c">
+                                                <div id="framepL5TLW_left_temp" class="move-span temp"></div>
+                                                <div id="portal_block_37" class="block move-span">
+                                                    <div id="portal_block_37_content" class="dxb_bc">
+                                                        <div class="portal_block_summary searchkey">
+                                                            <volist name="hot_recomment" id="vo">
+                                                                <a>{$vo.key}</a>
+                                                            </volist>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--[/diy]--></li>
+                            </ul>
+                        </div>
+
+                        <div class="deantabs top25">
+                            <ul class="deantabname">
+                                <li class="cur">官方微信</li>
+                                <li>社区微博</li>
+                                <div class="clear"></div>
+                            </ul>
+                            <div class="clear"></div>
+                            <ul class="deantabc top15">
+                                <li style="display:block;text-align:center;">
+                                    <div id="deantabc4" class="area">
+                                        <div id="framexSFs84" class="frame move-span cl frame-1">
+                                            <div id="framexSFs84_left" class="column frame-1-c">
+                                                <div id="framexSFs84_left_temp" class="move-span temp"></div>
+                                                <div id="portal_block_99" class="block move-span">
+                                                    <div id="portal_block_99_content" class="dxb_bc">
+                                                        <div class="portal_block_summary"><a href="#"
+                                                                                             target="_blank"><img
+                                                                width="258"
+                                                                src="/Public/Home/Picture/weixin.jpg"/></a>
+
+                                                            <div class="clear"></div>
+
+                                                            <a href="#" target="_blank" style="color:#333;">每天五分钟
+                                                                读VR精选好文</a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div id="deantabc3" class="area">
+                                        <div id="frameZB0jpU" class="frame move-span cl frame-1">
+                                            <div id="frameZB0jpU_left" class="column frame-1-c">
+                                                <div id="frameZB0jpU_left_temp" class="move-span temp"></div>
+                                                <div id="portal_block_98" class="block move-span">
+                                                    <div id="portal_block_98_content" class="dxb_bc">
+                                                        <div class="portal_block_summary">
+                                                            <iframe width="270" height="550" class="share_self"
+                                                                    frameborder="0" scrolling="no"
+                                                                    src="http://widget.weibo.com/weiboshow/index.php?language=&width=270&height=550&fansRow=1&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1944968250&verifier=687040f6&dpc=1"></iframe>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <script type="text/javascript">
+                            jq(".deantabname li").each(function (s) {
+                                jq(this).hover(function () {
+                                    jq(this).addClass("cur").siblings().removeClass("cur");
+                                    jq(".deantabc li").eq(s).show().siblings().hide();
+                                })
+                            })
+                        </script>
+                    </div>
+
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="deanfooter">
+        <!-- 友链 开始 钟声 -->
+        <div class="zhognsheng">
+        </div>
+        <!-- 友链 结束 钟声 -->
+        <div class="deanfooter">
+
+            <div class="deanft">
+                {:W('Cate/Foottitle')}
+
+            </div>
+
+            <div class="clear"></div>
+
+            <div class="deanftinfo" style="block">
+                {$system.banquan}<strong>
+                <a href="http://www.vr186.com/" target="_blank">虚拟现实</a></strong>
+                &nbsp;&nbsp;技术支持：<a href="http://www.vr186.com/" target="_blank">立体时代</a>
+                <a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">{$system['beian']}</a>
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                document.write(unescape("%3Cspan id='cnzz_stat_icon_1253647409'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/stat.php%3Fid%3D1253647409' type='text/javascript'%3E%3C/script%3E"));</script>
+            </div>
+        </div>
+    </div>
+    <div id="scrolltop" style="left: auto; right: 0px; visibility: hidden;">
+    <span hidefocus="true"><a title="返回顶部" onclick="window.scrollTo(&#39;0&#39;,&#39;0&#39;)"
+                              class="scrolltopa"><b>返回顶部</b></a></span>
+    </div>
+    <script src="/Public/Home/Scripts/657e223da3b84f03bf1d5cd7ddb12db3.js"></script>
+    <script src="/Public/Home/Scripts/d030c755df6f4b8e83c25947a2bd0e8d.js"></script>
+    <script>window._bd_share_config = {
+        "common": {
+            "bdSnsKey": {},
+            "bdText": "",
+            "bdMini": "2",
+            "bdMiniList": false,
+            "bdPic": "",
+            "bdStyle": "0",
+            "bdSize": "16"
+        },
+        "slide": {"type": "slide", "bdImg": "2", "bdPos": "right", "bdTop": "100"},
+        "image": {"viewList": ["qzone", "tsina", "tqq", "renren", "weixin"], "viewText": "分享到：", "viewSize": "16"},
+        "selectShare": {"bdContainerClass": null, "bdSelectMiniList": ["qzone", "tsina", "tqq", "renren", "weixin"]}
+    };
+    with (document)0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+    <div style="display:none"><a href="http://webscan.360.cn/index/checkwebsite/url/vr186.com" rel=”nofollow"><img
+            border="0" src="/Public/Home/Picture/2937a7296cea4058a508eaac218d54e0.gif"/></a></div>
+    <script src="/Public/Home/Scripts/657e223da3b84f03bf1d5cd7ddb12db3.js"></script>
+</body>
+</html>

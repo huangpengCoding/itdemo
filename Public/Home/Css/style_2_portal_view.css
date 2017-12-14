@@ -1,0 +1,1707 @@
+.usl
+{
+	overflow:scroll;
+	overflow-x:hidden;
+	width:580px;
+	height:280px;
+	padding:5px;
+}
+
+.usl2
+{
+	width:auto;
+	border:dashed #CCC;
+	border-width:0 1px 1px;
+}
+
+.usl li
+{
+	overflow:hidden;
+	float:left;
+	width:134px;
+	height:64px;
+	margin:3px;
+}
+
+.usl a
+{
+	display:block;
+	border:1px solid #FFF;
+	padding:4px;
+}
+
+.usl a:hover
+{
+	text-decoration:none;
+	border:1px solid;
+	background:#F2F2F2;
+	border-color:#DDD #999 #999 #DDD;
+}
+
+.usl .avt
+{
+	float:left;
+	margin-right:5px;
+	width:52px;
+	height:52px;
+	border:1px solid #CDCDCD;
+	background-color:#FFF;
+	background-position:2px 2px;
+	background-repeat:no-repeat;
+	zoom:1;
+}
+
+.usl .d
+{
+	float:left;
+	width:65px;
+	height:54px;
+	overflow:hidden;
+	word-wrap:break-word;
+}
+
+.usl li.a a,.usl li.a a:hover
+{
+	background-color:#FFF1E1;
+	border-color:#F90;
+}
+
+.usl li.a .avt span
+{
+	display:block;
+	margin-left:2px;
+	width:50px;
+	height:50px;
+	background:url(../Images/mark.png) no-repeat left bottom;
+}
+
+.usd
+{
+	border:solid #CCC;
+	background-color:#F2F2F2;
+	border-width:1px 0;
+	padding:5px 10px 0;
+}
+
+.usd2
+{
+	border-style:dashed;
+	border-width:1px;
+}
+
+.usd li
+{
+	float:left;
+	margin-right:1%;
+	width:48%;
+}
+
+.e
+{
+	overflow:hidden;
+}
+
+.e .i,.el .i
+{
+	border-bottom:1px dashed #CDCDCD;
+	background:#F7F7F7;
+	padding:6px 10px;
+}
+
+.et
+{
+	margin:20px 0 10px;
+}
+
+.el li
+{
+	min-height:20px;
+	border-bottom:1px dashed #CDCDCD;
+	padding:10px 20px;
+}
+
+.ie6 .el,.ie6 .el li
+{
+	zoom:1;
+}
+
+.el .t
+{
+	position:absolute;
+	margin:1px 0 0 -20px;
+}
+
+.el .o
+{
+	overflow:hidden;
+	float:right;
+	width:16px;
+	height:16px;
+	text-indent:20px;
+	background:url(../Images/op.png) no-repeat -2px -62px;
+	margin:4px -20px -4px 0;
+}
+
+.ie6 .el .o
+{
+	position:absolute;
+	margin:2px 0 0 525px;
+}
+
+.el .del
+{
+	background-position:-2px -22px;
+}
+
+.el .d
+{
+	padding-top:10px;
+	color:#666;
+}
+
+.ec .tn
+{
+	cursor:pointer;
+	margin:10px 10px 0 0;
+}
+
+.ec a .tn
+{
+	float:left;
+	max-width:90px;
+	max-height:90px;
+	border:1px solid #CDCDCD;
+	padding:2px;
+}
+
+.ie6 .ec a .tn
+{
+	width:expression(this.width>90&&this.width>=this.height?90:true);
+	height:expression(this.height>90&&this.width<=this.height?90:true);
+}
+
+.el .ec .hot
+{
+	float:right;
+	width:55px;
+	height:50px;
+	background:url(../Images/hotspot.gif) no-repeat;
+	margin:10px 0 0 10px;
+}
+
+.el .ec .hot a
+{
+	display:block;
+	line-height:20px;
+	text-align:center;
+	color:#FFF;
+}
+
+.el .ec .hot em
+{
+	display:block;
+	line-height:30px;
+	font-size:16px;
+	color:#369;
+	cursor:pointer;
+}
+
+.el a
+{
+	color:#369;
+}
+
+.xlda .el
+{
+	overflow:hidden;
+	float:left;
+	margin-top:-4px;
+	width:100%;
+}
+
+.xlda .el li
+{
+	margin-bottom:-4px;
+	padding-top:14px;
+}
+
+.ie6 .xlda .el .o
+{
+	margin:2px 0 0 460px;
+}
+
+.quote
+{
+	overflow:hidden;
+	padding-left:16px;
+	background:url(../Images/qa.gif) no-repeat 0 0;
+	color:#666;
+	margin:10px 0;
+}
+
+.quote blockquote
+{
+	display:inline;
+	padding-right:16px;
+	background:url(../Images/qz.gif) no-repeat 100% 100%;
+	margin:0;
+}
+
+.m_c .quote
+{
+	width:585px;
+}
+
+.blockcode
+{
+	overflow:hidden;
+	background:#F7F7F7;
+	color:#666;
+	margin:10px 0;
+	padding:5px 10px;
+}
+
+.blockcode code
+{
+	font-family:Monaco,Consolas,'Lucida Console','Courier New',serif;
+	font-size:12px;
+	line-height:1.8em;
+}
+
+* html .blockcode code
+{
+	font-family:'Courier New',serif;
+}
+
+.pattl
+{
+	overflow:hidden;
+	width:100%;
+	font-size:12px;
+	padding:1em 0;
+}
+
+.tatt,.t_attach_img
+{
+	color:#999;
+	font-size:12px;
+	padding:5px;
+}
+
+.tatt em
+{
+	color:#999;
+}
+
+.t_attachinsert
+{
+	font-size:12px;
+	margin:1em 0;
+}
+
+.t_attachinsert p img
+{
+	margin-bottom:-4px;
+}
+
+.t_table
+{
+	border:1px solid #E3EDF5;
+	empty-cells:show;
+	border-collapse:collapse;
+}
+
+.pl table.t_table
+{
+	table-layout:auto;
+}
+
+.t_table td
+{
+	border:1px solid #E3EDF5;
+	overflow:hidden;
+	padding:4px;
+}
+
+.tattl
+{
+	float:left;
+	overflow:hidden;
+	width:45%;
+	height:64px;
+	padding:10px 10px 10px 0;
+}
+
+.tattl a
+{
+	color:#369;
+	text-decoration:underline;
+}
+
+.tattl dt
+{
+	float:left;
+	width:40px;
+	font-weight:700;
+}
+
+.tattl strong
+{
+	margin-right:6px;
+	color:#F26C4F;
+	font-weight:400;
+}
+
+.tattl dt img
+{
+	width:32px;
+	height:32px;
+}
+
+.tattl dd
+{
+	margin-left:40px;
+	color:#999;
+}
+
+.attnm
+{
+	height:18px;
+	margin-bottom:3px;
+	overflow:hidden;
+	white-space:nowrap;
+}
+
+*html .attnm
+{
+	white-space:normal;
+}
+
+.attm
+{
+	overflow:visible;
+	float:none;
+	width:100%;
+	height:auto;
+}
+
+.attm dt
+{
+	width:0;
+}
+
+.attm dd
+{
+	margin-left:0;
+}
+
+.zoom
+{
+	cursor:pointer;
+}
+
+.attp
+{
+	width:180px;
+	text-align:left;
+}
+
+.attprice
+{
+	border:1px dashed #FF9A9A;
+	padding:5px;
+}
+
+.zoominner
+{
+	background:#FFF;
+	text-align:left;
+	padding:5px 10px 10px;
+}
+
+.zoominner p
+{
+	padding:8px 0;
+}
+
+.zoominner p a
+{
+	float:left;
+	margin-left:10px;
+	width:17px;
+	height:17px;
+	background:url(../Images/imgzoom_tb.gif) no-repeat 0 0;
+	line-height:100px;
+	overflow:hidden;
+}
+
+.zoominner p a:hover
+{
+	background-position:0 -39px;
+}
+
+.zoominner p a.imgadjust
+{
+	background-position:-40px 0;
+}
+
+.zoominner p a.imgadjust:hover
+{
+	background-position:-40px -39px;
+}
+
+.zoominner p a.imgclose
+{
+	background-position:-80px 0;
+}
+
+.zoominner p a.imgclose:hover
+{
+	background-position:-80px -39px;
+}
+
+.zimg_c
+{
+	position:relative;
+}
+
+.zimg_prev,.zimg_next
+{
+	display:block;
+	position:absolute;
+	width:80px;
+	height:100%;
+	background:url(../Images/pic-prev.png) no-repeat 0 -100px;
+	cursor:pointer;
+}
+
+.zimg_next
+{
+	right:10px;
+	background-image:url(../Images/pic-next.png);
+	background-position:100% -100px;
+}
+
+.zimg_c img
+{
+	margin:0 auto;
+}
+
+.relatedlink,.relatedlink:hover
+{
+	text-decoration:none!important;
+	color:#444!important;
+	border-bottom:1px solid blue;
+}
+
+.favmark
+{
+	margin-bottom:-3px;
+}
+
+.vw .h
+{
+	padding-bottom:15px;
+	border-bottom:1px solid #e6e6e6;
+}
+
+.vw .ph
+{
+	color:#444;
+	padding:15px 0 10px;
+}
+
+.vw .hot
+{
+	margin-right:5px;
+	color:#F26C4F;
+}
+
+.vw .s
+{
+	margin-top:10px;
+	padding-bottom:10px;
+	border-bottom:1px solid #CDCDCD;
+	line-height:2;
+	color:#60717e;
+}
+
+.vw .s strong
+{
+	font-weight:400;
+	color:#428bca;
+}
+
+.vw .d
+{
+	min-height:100px;
+	font-size:14px;
+	line-height:1.8;
+	color:#000;
+	margin:15px 0;
+}
+
+.vw .d i
+{
+	font-style:italic;
+}
+
+.vw .d img
+{
+	max-width:620px;
+}
+
+.ie6 .vw .d img
+{
+	width:expression(this.width>620?620:true);
+}
+
+.vwtb
+{
+	table-layout:fixed;
+	width:100%;
+	height:300px;
+}
+
+.vw .pattl_c .tip
+{
+	line-height:1.5;
+}
+
+#article_content
+{
+	vertical-align:top;
+}
+
+.vw .d ol,.vw .d ul
+{
+	margin:1em 2em;
+}
+
+.vw .d ul li
+{
+	list-style-type:disc;
+}
+
+.vw .d .ml,.vw .d .xl
+{
+	margin:0;
+}
+
+.vw .d .ml li
+{
+	list-style-type:none;
+}
+
+.vw .attach
+{
+	padding-left:20px;
+	background:url(../Images/fach.gif) no-repeat 0 50%;
+	color:#369;
+}
+
+.vw .o
+{
+	margin-top:15px;
+	padding-top:5px;
+	border-top:1px solid #CDCDCD;
+	text-align:right;
+	border:0;
+}
+
+.vw .o .mgcmn
+{
+	width:auto;
+	text-align:left;
+}
+
+#nv_portal .vw .h,#nv_portal .vw .s,#nv_portal .vw .d,#nv_portal .vw .o,#nv_portal .vw .pren,#nv_forum .vw .h,#nv_forum .vw .s,#nv_forum .vw .d
+{
+	margin-right:15px;
+	margin-left:15px;
+}
+
+.pic_h
+{
+	border-radius:5px;
+}
+
+.pic_h .h
+{
+	border-bottom:1px dashed #CDCDCD;
+	margin-left:0!important;
+	margin-right:0!important;
+	padding-left:15px;
+	padding-right:15px;
+}
+
+.pic_h .d
+{
+	margin:0!important;
+}
+
+.albumback #ft
+{
+	border-top:0;
+	color:#FFF;
+}
+
+.albumback #pt a,.albumback #ft a,.albumback a.thread_mod span,.albumback .vw .ph,.albumback .album_info p,.albumback .img_tit_t .xi1
+{
+	color:#FFF;
+}
+
+.albumback .ct2 .bm,.albumback #imagelist_nav
+{
+	background:#000;
+}
+
+.albumback #ct
+{
+	border-color:#CDCDCD;
+}
+
+.albumback a.thread_mod:hover span
+{
+	color:#539BCB!important;
+}
+
+.atd
+{
+	margin:15px auto;
+}
+
+.atd img
+{
+	margin-bottom:10px;
+}
+
+.atd td
+{
+	text-align:center;
+	vertical-align:bottom;
+	padding:10px;
+}
+
+.atd .atdc
+{
+	position:relative;
+	width:20px;
+	height:50px;
+	margin:0 auto 10px;
+}
+
+.atdc div
+{
+	position:absolute;
+	left:0;
+	bottom:0;
+	width:20px;
+	text-align:left;
+}
+
+.atd .ac1
+{
+	background:#C30;
+}
+
+.atd .ac2
+{
+	background:#0C0;
+}
+
+.atd .ac3
+{
+	background:#F90;
+}
+
+.atd .ac4
+{
+	background:#06F;
+}
+
+.atdc em
+{
+	position:absolute;
+	width:30px;
+	font-size:11px;
+	text-align:center;
+	color:#999;
+	margin:-25px 0 0 -5px;
+}
+
+.pgm
+{
+	clear:both;
+	padding:5px 0;
+}
+
+.bart
+{
+	position:relative;
+	width:640px;
+	padding:10px;
+}
+
+.bartl
+{
+	overflow-y:scroll;
+	width:270px;
+	height:270px;
+	border:1px solid #CDCDCD;
+	padding:10px;
+}
+
+.bartl li
+{
+	overflow:hidden;
+	width:250px;
+	height:20px;
+}
+
+.bartl li em
+{
+	float:left;
+	width:200px;
+}
+
+.barto
+{
+	position:absolute;
+	top:190px;
+	left:315px;
+	height:30px;
+}
+
+.barto .pn *
+{
+	padding:0 8px;
+}
+
+.bart .chkall
+{
+	padding-left:10px;
+}
+
+#chkalldiv p
+{
+	width:292px;
+}
+
+.ptblk li
+{
+	border-bottom:1px solid #CDCDCD;
+	padding:7px 0;
+}
+
+.ptblk em
+{
+	margin-right:30px;
+}
+
+.colorwd
+{
+	margin-right:3px;
+}
+
+#nv_portal .vw .pren em
+{
+	display:block;
+	width:100%;
+	height:22px;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+
+.deanwpl
+{
+	width:716px;
+	float:left;
+}
+
+.deanwpr
+{
+	width:304px;
+	float:right;
+}
+
+.deanhdpc
+{
+	width:686px;
+	height:278px;
+	margin:14px;
+}
+
+.deanlistpic
+{
+	width:686px;
+	height:278px;
+}
+
+#focus
+{
+	width:686px;
+	height:278px;
+	overflow:hidden;
+	position:relative;
+}
+
+#focus ul
+{
+	height:300px;
+	position:absolute;
+}
+
+#focus ul li
+{
+	float:left;
+	width:686px;
+	height:278px;
+	overflow:hidden;
+	position:relative;
+	background:#E4E4E4;
+}
+
+#focus .btn
+{
+	position:absolute;
+	width:160px;
+	height:10px;
+	right:0;
+	bottom:50px;
+	overflow:hidden;
+	z-index:11;
+	display:none;
+}
+
+#focus .btn span
+{
+	display:inline-block;
+	_display:inline;
+	_zoom:1;
+	width:25px;
+	height:10px;
+	_font-size:0;
+	margin-left:5px;
+	cursor:pointer;
+	background:#000;
+}
+
+#focus .btn span.on
+{
+	background:#333;
+}
+
+#focus .preNext
+{
+	width:22px;
+	height:79px;
+	position:absolute;
+	top:90px;
+	cursor:pointer;
+}
+
+#focus .pre
+{
+	left:10px;
+	background:url(../Images/left.png) no-repeat 0 0;
+}
+
+#focus .next
+{
+	right:10px;
+	background:url(../Images/right.png) no-repeat 0 0;
+}
+
+#focus ul li .slideother
+{
+	position:absolute;
+	bottom:0;
+	width:686px;
+	height:80px;
+	z-index:10;
+	text-align:left;
+	background:url(../Images/black.png) 0 0 repeat;
+}
+
+.deanauthoravar
+{
+	display:block;
+	position:absolute;
+	bottom:15px;
+	right:30px;
+	width:33px;
+	height:33px;
+	overflow:hidden;
+}
+
+.deanauthoravar img
+{
+	display:block;
+	width:32px;
+	height:32px;
+	border-radius:32px;
+}
+
+#focus ul li .slideother .deannum
+{
+	display:none;
+	font-size:35px;
+	width:46px;
+	height:80px;
+	line-height:80px;
+	color:#f60;
+	float:left;
+	padding-left:10px;
+}
+
+.deanaaa
+{
+	float:left;
+	width:530px;
+	overflow:hidden;
+}
+
+#focus ul li .slideother .h12
+{
+	font-size:16px;
+	padding:20px 10px 5px;
+}
+
+#focus ul li .slideother .h12 b
+{
+	float:left;
+	color:#fff;
+	font-weight:400;
+	padding-left:10px;
+}
+
+#focus ul li .slideother .h12 a
+{
+	color:#fff;
+	font-size:16px;
+	font-weight:700;
+	float:left;
+}
+
+#focus ul li .slideother .h12 a:hover
+{
+	text-decoration:none;
+	color:#57BAE8;
+}
+
+#focus ul li .slideother .deanp
+{
+	padding-left:10px;
+	font-size:12px;
+	color:#ccc;
+}
+
+.deanpiclist ul li
+{
+	margin-bottom:15px;
+}
+
+.deanpiclic
+{
+	padding:14px;
+}
+
+.deanpiclicl
+{
+	width:220px;
+	height:170px;
+	float:left;
+	position:relative;
+}
+
+.deanhover
+{
+	width:220px;
+	height:170px;
+	position:absolute;
+	left:0;
+	top:0;
+	display:none;
+	background:rgba(87,186,232,.7) url(../Images/focus.png) center center no-repeat;
+	background-size:0 0;
+	-webkit-transition:all .2s ease-in-out;
+	-moz-transition:all .2s ease-in-out;
+	-ms-transition:all .2s ease-in-out;
+	-o-transition:all .2s ease-in-out;
+	transition:all .2s ease-in-out;
+}
+
+.deanhover:hover
+{
+	background:rgba(87,186,232,.7) url(../Images/focus.png) center center no-repeat;
+	background-size:31px 25px;
+}
+
+.deanpiclicr
+{
+	width:440px;
+	height:170px;
+	float:left;
+	position:relative;
+	margin-left:15px;
+}
+
+.deanpiclicr h2
+{
+	font-size:18px;
+	font-weight:400;
+}
+
+.deanpiclicr h2 a:hover
+{
+	color:#32a5e7;
+}
+
+.deanpicsummary
+{
+	font-size:14px;
+	color:#777;
+	line-height:22px;
+	text-indent:27px;
+	padding-top:10px;
+}
+
+.deanliicon
+{
+	margin-top:10px;
+	font-size:12px;
+}
+
+.deanicontype
+{
+	float:left;
+	margin-right:15px;
+}
+
+.deanicontype a
+{
+	color:#999;
+	text-decoration:none;
+	background:url(../Images/type.png) 0 0 no-repeat;
+	text-indent:22px;
+	display:block;
+}
+
+.deanicontype a:hover
+{
+	background:url(../Images/typehover.png) 0 0 no-repeat;
+	color:#2393df;
+}
+
+.deanicondate
+{
+	float:left;
+	margin-right:15px;
+	background:url(../Images/date.png) 0 0 no-repeat;
+	text-indent:22px;
+	color:#999;
+}
+
+.deaniconcomment
+{
+	float:left;
+	background:url(../Images/comment.png) 0 0 no-repeat;
+	text-indent:22px;
+	color:#999;
+}
+
+.deanread
+{
+	position:absolute;
+	bottom:0;
+	right:0;
+	display:block;
+	width:80px;
+	height:22px;
+	border-radius:1px;
+	background:#0DAAEA;
+	color:#fff;
+	font-size:12px;
+	text-align:center;
+	line-height:22px;
+}
+
+.deanread:hover
+{
+	background:#f90;
+	text-decoration:none;
+}
+
+.deanforumhotc
+{
+	margin:14px;
+}
+
+.deanforumtitle
+{
+	height:40px;
+	line-height:40px;
+	border-bottom:1px solid #dedede;
+	padding-bottom:10px;
+}
+
+.deanforumtitle h2
+{
+	float:left;
+	font-weight:400;
+	font-size:18px;
+}
+
+.deanforumtitle ul
+{
+	float:right;
+	height:40px;
+}
+
+.deanforumtitle ul li
+{
+	float:left;
+	font-size:12px;
+}
+
+.deanforumtitle ul li span
+{
+	color:#ffa800;
+	font-family:Georgia,"Times New Roman",Times,serif;
+	font-weight:400;
+	font-size:18px;
+}
+
+.deanforumtitle ul li b
+{
+	font-weight:400;
+	color:#ccc;
+	padding:0 10px;
+}
+
+.deanforumhotlists li
+{
+	height:46px;
+	line-height:46px;
+	border-bottom:1px solid #E6E6E6;
+	padding:10px 0;
+}
+
+.deanliavar
+{
+	width:46px;
+	height:46px;
+	float:left;
+}
+
+.deanliavar img
+{
+	width:46px;
+	height:46px;
+	border-radius:46px;
+}
+
+.deanforumname
+{
+	font-size:16px;
+	padding-left:14px;
+	float:left;
+	color:#333;
+}
+
+.deanforumname:hover
+{
+	color:#666;
+	text-decoration:none;
+}
+
+.deanforumauthor
+{
+	font-size:14px;
+	float:right;
+	color:#999;
+}
+
+.deanwprc
+{
+	width:302px;
+}
+
+.deanp14
+{
+	width:274px;
+	margin:14px;
+}
+
+.deanp14 h2
+{
+	font-size:16px;
+	color:#333;
+	height:25px;
+	line-height:25px;
+	padding-bottom:10px;
+	border-bottom:1px solid #e9e9e9;
+}
+
+.deanqd a
+{
+	height:52px;
+	background:#fdab21 url(../Images/post1.png) 80px 15px no-repeat;
+	display:block;
+	line-height:52px;
+	color:#fff;
+	font-size:18px;
+	text-indent:115px;
+	border:1px solid #f90;
+}
+
+.deanqd a:hover
+{
+	background:#f90 url(../Images/post1.png) 80px 15px no-repeat;
+	border:1px solid #F9CA7B;
+	text-decoration:none;
+}
+
+.deanforumhotr ul li
+{
+	float:left;
+	width:136px;
+	height:40px;
+	border-bottom:1px solid #ddd;
+	line-height:40px;
+	text-align:center;
+}
+
+.deanforumhotr ul li a
+{
+	display:block;
+	font-size:14px;
+	color:#333;
+}
+
+.deanforumhotr ul li a:hover
+{
+	color:#0DAAEA;
+}
+
+.deanactive ul li
+{
+	margin-top:15px;
+}
+
+.deanactivel
+{
+	width:121px;
+	float:left;
+}
+
+.deanactiver
+{
+	width:140px;
+	float:right;
+}
+
+.deanactiver h3
+{
+	font-size:14px;
+}
+
+.deanactivesummary
+{
+	color:#666;
+	font-size:12px;
+	height:38px;
+	overflow:hidden;
+	line-height:20px;
+	padding:3px 0;
+}
+
+.deanattend
+{
+	display:block;
+	width:60px;
+	height:21px;
+	text-align:center;
+	line-height:21px;
+	background:#4ebaf2;
+	color:#fff;
+	font-size:12px;
+}
+
+.deantabname li
+{
+	float:left;
+	width:133px;
+	height:40px;
+	text-align:center;
+	line-height:40px;
+	border-bottom:#e6e6e6 1px solid;
+	color:#333;
+	cursor:pointer;
+	font-size:16px;
+}
+
+.deantabname li.cur
+{
+	border-bottom:#fff 1px solid;
+	border-top:#e6e6e6 1px solid;
+	border-left:#e6e6e6 1px solid;
+	border-right:#e6e6e6 1px solid;
+	color:#32a5e7;
+}
+
+.deantabc li h3
+{
+	font-size:14px;
+	height:24px;
+	line-height:24px;
+}
+
+.deantabc li p
+{
+	font-size:14px;
+	font-weight:400;
+	height:28px;
+	line-height:28px;
+}
+
+.deanlink
+{
+	color:#32a5e7;
+	padding-right:10px;
+	font-size:14px;
+}
+
+.deandown
+{
+	display:block;
+	width:274px;
+	height:46px;
+	font-size:18px;
+	margin-top:8px;
+	color:#fff;
+	line-height:46px;
+	background:#32a5e7;
+	text-align:center;
+}
+
+.deannewdpc
+{
+	margin-top:10px;
+}
+
+.deannewzdc
+{
+	width:272px;
+	height:147px;
+	border:1px solid #ddd;
+	margin-top:10px;
+}
+
+.deannewzd ul li
+{
+	float:left;
+	width:88px;
+	text-align:center;
+	height:25px;
+	line-height:20px;
+	font-size:14px;
+	background:url(../Images/public.png) -390px 0 no-repeat;
+}
+
+.deannewzd ul li.linone
+{
+	background:none;
+}
+
+.deanrank ul li
+{
+	height:35px;
+	line-height:35px;
+}
+
+.deanrank ul li span
+{
+	float:left;
+	font-size:14px;
+	font-style:italic;
+	color:#666;
+	display:block;
+	margin-right:10px;
+}
+
+.deanrank ul li span.deanspan
+{
+	color:#428bca;
+}
+
+.deanrank ul li a
+{
+	float:left;
+	font-size:14px;
+	color:#60717e;
+}
+
+.nvhm
+{
+	background:url(../Images/home.png) no-repeat 0 7px;
+	margin-top:7px;
+	_margin-top:7px;
+}
+
+#pt .z em
+{
+	background:url(../Images/embg.png) no-repeat 3px 7px;
+}
+
+.ie8 #pt .z
+{
+	line-height:35px;
+}
+
+.ie8
+{
+	background:url(../Images/embg.png) no-repeat 3px 0;
+}
+
+.ie8 .nvhm,.ie9 .nvhm,.ie10 .nvhm
+{
+	background:url(../Images/home.png) no-repeat 0 8px;
+}
+
+.chart
+{
+	padding-left:32px;
+	background:url(../Images/chart.png) no-repeat 0 50%;
+	color:#666;
+}
+
+#pt
+{
+	clear:both;
+	display:none;
+}
+
+.pgs
+{
+	text-align:center;
+	font-size:14px;
+}
+
+.pg a
+{
+	border:0;
+	background:#e9e9e9;
+	color:#333;
+	width:25px;
+	height:27px;
+	border-radius:27px;
+	line-height:27px;
+	padding:0;
+}
+
+.pg a:hover
+{
+	background:#0DAAEA;
+	color:#fff;
+}
+
+.pg strong
+{
+	background:#0DAAEA;
+	color:#fff;
+	border:0;
+	width:25px;
+	height:27px;
+	border-radius:27px;
+	line-height:27px;
+	padding:0;
+}
+
+.pg a.prev
+{
+	background:#e9e9e9 url(../Images/arw_l.gif) 5px 5px no-repeat;
+}
+
+.pg a.nxt
+{
+	background:#e9e9e9 url(../Images/arw_r.gif) 5px 5px no-repeat;
+	width:70px;
+	padding-right:0;
+	text-indent:10px;
+}
+
+.pg a.nxt:hover
+{
+	background:#f6f6f6 url(../Images/arw_r.gif) 5px 5px no-repeat;
+	color:#666!important;
+}
+
+.pg a.prev:hover
+{
+	background:#f6f6f6 url(../Images/arw_l.gif) 5px 5px no-repeat;
+}
+
+.pg label
+{
+	border:1px solid #f6f6f6;
+}
+
+.bm
+{
+	background:none;
+	border:0;
+}
+
+.pg a:hover,.pgb a:hover
+{
+	color:#fff!important;
+}
+
+.bm_h
+{
+	border-bottom:1px solid #e3e3e3;
+	background:#fff;
+	color:#333;
+	font-size:14px;
+	border-top:0;
+	border:0;
+	padding:5px 10px;
+}
+
+.bm_h .xs2
+{
+	font-size:16px!important;
+	font-weight:400;
+}
+
+.deansubnavs ul li
+{
+	width:45%;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+}
+
+.deanmvlist
+{
+	width:714px;
+}
+
+.deanmvlist ul
+{
+	padding-top:10px;
+}
+
+.deanmvlist ul li
+{
+	width:222px;
+	height:170px;
+	margin-bottom:10px;
+	overflow:hidden;
+	position:relative;
+	margin-left:10px;
+	float:left;
+
+}
+
+.deanmvlist ul li .deanmvinfo
+{
+	position:absolute;
+	color:#fff;
+	font-size:14px;
+	bottom:0;
+	left:0;
+	width:222px;
+	height:90px;
+	background:url(../Images/bgc.png) 0 0 repeat;
+}
+
+.deanmvlist ul li .deanmvinfo h2
+{
+	width:200px;
+	font-weight:400;
+	text-align:center;
+	line-height:26px;
+	height:26px;
+	overflow:hidden;
+	margin:0 auto;
+}
+
+.deanmvss
+{
+	width:200px;
+	color:#fff;
+	margin:5px auto 0;
+}
+
+.deanmvss .deaniconcomment,.deanmvss .deanicondate
+{
+	color:#f9f9f9;
+}
+
+.deanbf
+{
+	width:60px;
+	height:22px;
+	margin-left:10px;
+	margin-top:10px;
+	display:block;
+	text-align:center;
+	line-height:22px;
+	color:#fff;
+	border:1px solid #1092e5;
+	font-size:12px;
+	font-family:Arial,Helvetica,sans-serif;
+	background-color:#25a3f3;
+}
+
+.deanbf:hover
+{
+	background:#007dcc;
+	text-decoration:none;
+}
+
+.el .ec .hot a:hover,.atd a:hover
+{
+	text-decoration:none;
+}
+
+#share_preview .h,.zimg_p strong,.deantabc li
+{
+	display:none;
+}
+
+.tatt,.tattl .attp
+{
+	width:240px;
+}
+
+.atd a,.deansubnavs ul li a
+{
+	display:block;
+}
+
+.pgm .pg,.dopt input
+{
+	float:left;
+}
+
+.deanpiclicr h2 a,.deanactiver h3 a,.deannewzd ul li a
+{
+	color:#333;
+}
+
+.deanqd,.deanforumhotr
+{
+	width:274px;
+}
+
+.deanmvlist ul li .deanmvinfo h2 a,.deanmvss a
+{
+	color:#fff;
+}
+
+.feelings{ width:540px; margin:0 auto;}

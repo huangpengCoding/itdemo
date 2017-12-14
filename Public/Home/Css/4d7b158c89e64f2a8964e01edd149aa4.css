@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=gbk" />
+<title>404错误 - VR186</title>
+<style type="text/css"> 
+body{margin:0;padding:0;font:12px/1.6 Arial,Sans-serif; background:#f2f2f2}
+#goto{color:#C00; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:24px; display:none}
+.content{position: absolute;background:url(../Images/404.jpg) no-repeat center center #f2f2f2; overflow:hidden; width:806px; height:620px;
+left: 50%;  top: 50%;  margin-left: -403px;  margin-top: -310px;  }
+.link{ margin:340px 0 0 0;  text-align:center}
+.link a{ padding:10px; width:100px; line-height:30px; height:30px; display:inline-block; margin:0 20px;}
+</style>
+<script type="text/javascript">
+function out(obj){
+var i=obj;
+if(i==0)
+document.location.href="http://www.vr186.com";
+document.getElementById("goto").innerHTML=i;
+i--;
+setTimeout("out("+i+")",1000);
+}
+</script>
+
+</head>
+<BODY onLoad="out(10);">
+<div  class="content">
+
+<div class="link">
+<p><a href="javascript:history.go(-1);"> </a><a href="http://www.vr186.com/"> </a> </p>
+<p><br><br><br><a href="http://www.vr186.com/" style="width:130px"> </a> 
+<h3><span id="goto"></span></h3></p>    
+</div>
+
+</div>
+</body>
+</html>
+
