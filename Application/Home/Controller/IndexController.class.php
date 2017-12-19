@@ -14,7 +14,9 @@ class IndexController extends Controller
         //选中的栏目
         $this->assign('id', 1);
 
-        //热门资源下载
+        //热门资源
+        $hot_download = M()->query("select det.info_detail_id, det.info_detail_title  from it_hot_download dow left join it_info_detail det on dow.info_detail_id=det.info_detail_id");
+        $this->assign('hot_download', $hot_download);
 
         //轮播图
         $carousel = M('it_index_carousel')->order('priority DESC, id ASC')->select();
@@ -27,7 +29,7 @@ class IndexController extends Controller
         //热门搜索,专题推荐
         $hot_search = M('it_hot_search')->order('id ASC')->select();
         $this->assign('hot_search', $hot_search);
-        $hot_recomment = M('it_hot_recomment')->order('id ASC')->select();
+        $hot_recomment = M('it_special_recomment')->order('id ASC')->select();
         $this->assign('hot_recomment', $hot_recomment);
 
         //system info

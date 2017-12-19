@@ -1,90 +1,101 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb">
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
 
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-<title>{$vo.info_detail_title}</title>
-<meta name="keywords" content="{$vo.info_detail_title}" />
-<meta name="description" content="{$vo.info_detail_abstract}" />
-<link rel="stylesheet" type="text/css" href="/Public/Home/Css/style_2_common.css">
-<link rel="stylesheet" type="text/css" href="/Public/Home/Css/style_2_portal_view.css">
-<link rel="stylesheet" type="text/css" href="/Public/Home/Css/style_2_portal_index.css">
-<script src="/Public/Home/Scripts/common.js" type="text/javascript"></script>
-<script src="/Public/Home/Scripts/portal.js" type="text/javascript"></script>
-<script src="/Public/Home/Scripts/tools.js" type="text/javascript"></script>
-<script type="text/javascript">
-	var jq=jQuery.noConflict();
-</script>
-<script src="/Public/Home/Scripts/jquery-1.6.2.min.js" type="text/javascript"></script>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>{$vo.info_detail_title}</title>
+    <meta name="keywords" content="{$vo.info_detail_title}"/>
+    <meta name="description" content="{$vo.info_detail_abstract}"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Home/Css/style_2_common.css">
+    <link rel="stylesheet" type="text/css" href="/Public/Home/Css/style_2_portal_view.css">
+    <link rel="stylesheet" type="text/css" href="/Public/Home/Css/style_2_portal_index.css">
+    <script src="/Public/Home/Scripts/common.js" type="text/javascript"></script>
+    <script src="/Public/Home/Scripts/portal.js" type="text/javascript"></script>
+    <script src="/Public/Home/Scripts/tools.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var jq = jQuery.noConflict();
+    </script>
+    <script src="/Public/Home/Scripts/jquery-1.6.2.min.js" type="text/javascript"></script>
 </head>
 <body id="nv_portal" class="pg_view" onkeydown="if(event.keyCode==27) return false;">
 <iframe id="sina_anywhere_iframe" style="display: none;"></iframe>
-<div id="append_parent"></div><div id="ajaxwaitid"></div>
+<div id="append_parent"></div>
+<div id="ajaxwaitid"></div>
 <div id="toptb" class="cl">
-<div class="wp">
-	<div class="a"><h1>{$system.description}</h1></div>
-    <div class="z">
-        <div id="scbar" class="cl">
-        <form id="scbar_form" method="post" autocomplete="off" action="/e/search/index.php" target="_blank">
-<input type="hidden" name="show" value="title" />
-<input type="hidden" name="classid" value="2" />
-<table cellspacing="0" cellpadding="0">
-<tbody><tr>
-<td><input type="text" name="keyboard" id="scbar_txt" value="请输入搜索内容" autocomplete="off" x-webkit-speech="" speech="" class=" xg1" placeholder="请输入搜索内容"></td>
-<td><button type="submit" name="searchsubmit" id="scbar_btn" sc="1" class="pn pnc" value="true" mid=""></button></td>
-</tr>
-</tbody></table>
-</form>
+    <div class="wp">
+        <div class="a"><h1>{$system.description}</h1></div>
+        <div class="z">
+            <div id="scbar" class="cl">
+                <form id="scbar_form" method="post" autocomplete="off" action="/e/search/index.php" target="_blank">
+                    <input type="hidden" name="show" value="title"/>
+                    <input type="hidden" name="classid" value="2"/>
+                    <table cellspacing="0" cellpadding="0">
+                        <tbody>
+                        <tr>
+                            <td><input type="text" name="keyboard" id="scbar_txt" value="请输入搜索内容" autocomplete="off"
+                                       x-webkit-speech="" speech="" class=" xg1" placeholder="请输入搜索内容"></td>
+                            <td>
+                                <button type="submit" name="searchsubmit" id="scbar_btn" sc="1" class="pn pnc"
+                                        value="true" mid=""></button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+            <script type="text/javascript">
+                initSearchmenu('scbar', '');
+            </script>
+            <if condition="$log eq 1">
+                <a href="/Home/Center/index">个人中心</a> <a href="/Home/Login/loginout">退出</a>
+                <elseif condition="$log eq 0"/>
+                <a href="/Home/Login/index">注册登录</a>
+            </if>
         </div>
-        <script type="text/javascript">
-        initSearchmenu('scbar', '');
-        </script>
-        <if condition="$log eq 1">
-            <a href="/Home/Center/index">个人中心</a> <a href="/Home/Login/loginout">退出</a>
-        <elseif condition="$log eq 0" />
-            <a href="/Home/Login/index">注册登录</a>
-        </if>
     </div>
-</div>
 </div>
 <div id="deanheader" style="">
-<div class="deanwp">
-    <div class="deanlogo">
-    <h2><a href="{$system.url}" title="{$system.name}"><img src="/Public/Uploads/{$system.logo}" alt="{$system.name}" border="0" width="199" height="58"></a></h2>
+    <div class="deanwp">
+        <div class="deanlogo">
+            <h2><a href="{$system.url}" title="{$system.name}"><img src="/Public/Uploads/{$system.logo}"
+                                                                    alt="{$system.name}" border="0" width="199"
+                                                                    height="58"></a></h2>
+        </div>
+        <div class="deannav">
+            <ul>
+                <volist name="title" id="vp">
+                    <li><a href="/Home/{$vp.url}/fid/{$vp.id}" hidefocus="true" title="{$vp.name}"
+                        <if condition="$vp.id eq $id">class="cur"</if>
+                        >{$vp.name}<span>{$vp.seo_remark}</span></a></li>
+                </volist>
+            </ul>
+        </div>
+        <div class="deandenglu" style="display:none">
+            <!-- <script src="Scripts/loginjs.js"></script> -->
+            <script type="text/javascript">
+                jq(".deanhove").hover(
+                        function () {
+                            jq(this).addClass("deanhoved");
+                            jq(this).siblings(".deanmessage").show();
+                        },
+                        function () {
+                            jq(this).removeClass("deanhoved");
+                            jq(this).siblings(".deanmessage").hide();
+                        })
+                jq(".deanmessage").hover(
+                        function () {
+                            jq(this).siblings(".deanhove").addClass("deanhoved");
+                            jq(this).show();
+                        },
+                        function () {
+                            jq(this).siblings(".deanhove").removeClass("deanhoved");
+                            jq(this).hide();
+                        })
+            </script>
+        </div>
+        <div class="clear"></div>
     </div>
-    <div class="deannav">
-    <ul>
-        <volist name="title" id="vp">
-            <li><a href="/Home/{$vp.url}/fid/{$vp.id}" hidefocus="true" title="{$vp.name}" <if condition="$vp.id eq $id">class="cur"</if>  >{$vp.name}<span>{$vp.seo_remark}</span></a></li>
-        </volist>
-    </ul>
-    </div>
-<div class="deandenglu" style="display:none">
-    <!-- <script src="Scripts/loginjs.js"></script> -->
-	<script type="text/javascript">
-    jq(".deanhove").hover(
-    function(){
-    jq(this).addClass("deanhoved");
-    jq(this).siblings(".deanmessage").show();
-    },
-    function(){
-    jq(this).removeClass("deanhoved");
-    jq(this).siblings(".deanmessage").hide();
-    })
-    jq(".deanmessage").hover(
-    function(){
-    jq(this).siblings(".deanhove").addClass("deanhoved");
-    jq(this).show();
-    },
-    function(){
-    jq(this).siblings(".deanhove").removeClass("deanhoved");
-    jq(this).hide();
-    })
-    </script>
-</div>
-<div class="clear"></div>
-</div>
 </div>
 <script src="/Public/Home/Scripts/nv1.js" type="text/javascript"></script>
 <div class="clear"></div>
@@ -101,341 +112,392 @@
 </div>
 <div class="clear"></div>
 <div id="wp" class="wp">
-	<div id="ct" class="deanbox">
-		<div class="deanwpl deanborder deanfff">
-			<div class="bm vw"><div class="newsnav">
-				<a href="/Home/Index/index">首页</a>&nbsp;>&nbsp;
-				<a href="/Home/VrNews/index">资讯</a>&nbsp;>&nbsp;
-				<a href="/Home/VrNews/index/id/{$vo.info_id}">{$vo.info_name}</a>
-			</div>
-			<div class="h hm">
-				<h1 class="ph">{$vo.info_detail_title}</h1>
-				<p class="xg1">{$vo.info_detail_createtime|date="Y-m-d H:i:s",###}<span class="pipe">|</span>发布者: {$vo.info_detail_author}<span class="pipe">|</span>
-查看: <em id="_viewnum">{$vo.info_detail_viewnum}<!-- <script src="/Public/Home/Scripts/1527b722bda2498f92eeef90d4e2b8ea.js"></script> --><!--<script>document.write(parseInt(10*Math.random()));</script>--></em><span class="pipe">|</span>
-<a href="#pl">我要评论({$vo.info_detail_commentnum}<!-- <script src="/Public/Home/Scripts/142d05ae81264573b35e43533b214355.js"></script> -->)</a></p>
-<br>
-<p style="text-align: center;">
-	<a href="http://shop.vr186.com/shop/item-279.html" target="_blank" class="infotextkey">
-	<img src="/Public/Home/Picture/69594c8de1f4b575fb554d8c6b341951.jpg" alt="星轮viulux"></a>
-</p>
+    <div id="ct" class="deanbox">
+        <div class="deanwpl deanborder deanfff">
+            <div class="bm vw">
+                <div class="newsnav">
+                    <a href="/Home/Index/index">首页</a>&nbsp;>&nbsp;
+                    <a href="/Home/VrNews/index">资讯</a>&nbsp;>&nbsp;
+                    <a href="/Home/VrNews/index/id/{$vo.info_id}">{$vo.info_name}</a>
+                </div>
+                <div class="h hm">
+                    <h1 class="ph">{$vo.info_detail_title}</h1>
 
-</div>
-<div class="s"><div><strong>摘要</strong>:  {$vo.info_detail_abstract}</div></div>
-<div class="d">
+                    <p class="xg1">{$vo.info_detail_createtime|date="Y-m-d H:i:s",###}<span class="pipe">|</span>发布者:
+                        {$vo.info_detail_author}<span class="pipe">|</span>
+                        查看: <em id="_viewnum">{$vo.info_detail_viewnum}
+                            <!-- <script src="/Public/Home/Scripts/1527b722bda2498f92eeef90d4e2b8ea.js"></script> -->
+                            <!--<script>document.write(parseInt(10*Math.random()));</script>--></em><span
+                                class="pipe">|</span>
+                        <a href="#pl">我要评论({$vo.info_detail_commentnum}
+                            <!-- <script src="/Public/Home/Scripts/142d05ae81264573b35e43533b214355.js"></script> -->
+                            )</a></p>
+                    <br>
 
-<p style="text-align: center;">&nbsp;</p>
-	{$vo.info_detail_content}
-	<!-- <p>
-		<a href=http://www.vr186.com target=_blank class=infotextkey>虚拟现实</a>
-		技术在2015年获得了极高的关注，终于有机会从小众真正走入主流消费电子市场。据市场调研数据显示，受访人群中大约有55%的用户表示可能会在2016年购买
-		<a href=http://www.vr186.com target=_blank class=infotextkey>虚拟现实</a>
-		设备，这个消息无疑是令人振奋的。当然，<a href=http://www.vr186.com target=_blank class=infotextkey>虚拟现实</a>在2016年想要实现质的飞跃，还需要面对一些问题，下面便是外媒总结的一些要点：
-	</p>
-	<p><strong>1. 索尼PS VR作用至关重要</strong></p>
-	<p style="text-align: center;"><img alt="虚拟现实技术将在2016年如何发展？" src="/Public/Home/Picture/0c673060ffaee8d64340b0eb45b588fa.jpg" /></p>
-	<p>在所有虚拟现实头戴显示器中，索尼的PS VR极具潜力，普遍被评论界认为是虚拟现实初期发展至关重要的设备。</p>
-	<p>首先，PS VR仅支持PS4<a href=http://www.vr186.com/vr_news/games/ target=_blank class=infotextkey>游戏</a>机，而PS4目前全球销量已经突破3000万台，其中大部分为核心<a href=http://www.vr186.com/vr_news/games/ target=_blank class=infotextkey>游戏</a>玩家，意味着PS VR拥有巨大的垂直用户群体。其次，得益于PS4庞大的装机量，<a href=http://www.vr186.com/vr_news/games/ target=_blank class=infotextkey>游戏</a>开发商更愿意为索尼平台开发<a href=http://www.vr186.com/vr_news/games/ target=_blank class=infotextkey>游戏</a>，目前PS VR游戏数量及质量远超Oculus等竞争对手，这是内容上的优势。显然，索尼对于虚拟现实尤其是游戏领域的发展，将起到重大作用。</p>
-	<p><strong>2. 内容是关键</strong></p>
-	<p style="text-align: center;"><img alt="虚拟现实技术将在2016年如何发展？" src="/Public/Home/Picture/838ec360837dfddd1d1785b2762a4156.jpg" /></p>
-	<p>虚拟现实不仅仅是重要的游戏技术，在社交、影视娱乐等方面也彰显出巨大的潜力。越来越多用户开始观看Facebook和YouTube上的360度视频，好莱坞制片公司也开始着手制作虚拟现实<a href=http://www.vr186.com/vr_news/movies/ target=_blank class=infotextkey>电影</a>及电视直播内容，包括NBA等体育赛事，内容上的丰富将有助于虚拟现实吸引非游戏用户。</p>
-	<p><strong>3. 增强现实加入竞争</strong></p>
-	<p style="text-align: center;"><img alt="虚拟现实技术将在2016年如何发展？" src="/Public/Home/Picture/87fdb7e21558fdd1c5131407dd489465.jpg" /></p>
-	<p>虚拟现实的一个有力竞争对手，则是增强现实。事实上，两者经常会被混为一谈，但实际体验并不相同。以微软HoloLens、Magic Leap为首的增强现实设备，主打在现实中叠加虚拟内容的体验，往往使用半透明透镜和投射技术，让佩戴者可以在现实环境中查看、操作虚拟内容。相对来说，增强现实更适合日常计算机使用、创意设计、演示等操作，但预计在数年内，增强现实仍会被视作虚拟现实的最大竞争对手。</p>
-	<p><strong>4. 虚拟现实与周边设备共同发展</strong></p> -->
+                    <p style="text-align: center;">
+                        <a href="http://shop.vr186.com/shop/item-279.html" target="_blank" class="infotextkey">
+                            <img src="/Public/Home/Picture/69594c8de1f4b575fb554d8c6b341951.jpg" alt="星轮viulux"></a>
+                    </p>
 
+                </div>
+                <div class="s">
+                    <div><strong>摘要</strong>: {$vo.info_detail_abstract}</div>
+                </div>
+                <div class="d">
 
-<p>&nbsp;</p><table cellpadding="0" cellspacing="0" class="atd"><tbody><tr><td id="article_content"><p align="center" class="pageLink">
-</p>
-</td></tr></tbody></table>
+                    <p style="text-align: center;">&nbsp;</p>
 
-<p style="text-align: center;"><img src="/Public/Home/Picture/weixin.jpg" data-bd-imgshare-binded="1" alt=" " width="220" height="220"/></p>
-<p style="text-align: center;"><span style="color: rgb(102, 204, 204);"><strong>每天五分钟，读VR精选好文</strong></span></p>
+                    <p>&nbsp;</p>
+                    <table cellpadding="0" cellspacing="0" class="atd">
+                        <tbody>
+                        <tr>
+                            <td id="article_content"><p align="center" class="pageLink">
+                            </p>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
 
-<div id="click_div"><div class="left_boxs_tit4"><div class="blank10"></div>
-<h2>关注“{$vo.info_detail_title}”的人还喜欢</h2>
-<ul>
-	<volist name="tlist" id="v">
-		<li><a href="__URL__/single/id/{$v.info_detail_id}" title="{$v.info_detail_title}">{$v.info_detail_title}</a></li>
-	</volist>
-	<!-- <li><a href="/vr_news/vr_industry_news/1987.html" title="关于VR Porn 虚拟现实成人内容仍不成熟">关于VR Porn 虚拟现实成人内容仍不成熟</a></li>
-	<li><a href="/vr_news/vr_industry_news/1985.html" title="全球仅有不到1%的PC支持虚拟现实头盔">全球仅有不到1%的PC支持虚拟现实头盔</a></li>
-	<li><a href="/vr_news/vr_industry_news/1978.html" title="虚拟现实技术不仅好玩 它还救了一个婴儿的命">虚拟现实技术不仅好玩 它还救了一个婴儿的命</a></li>
-	<li><a href="/vr_news/vr_industry_news/1976.html" title="NASA想玩点大的 邀请普通用户一起体验火星">NASA想玩点大的 邀请普通用户一起体验火星</a></li>
-	<li><a href="/vr_news/vr_industry_news/1975.html" title="未来房产可能会应用虚拟现实技术来监测">未来房产可能会应用虚拟现实技术来监测</a></li>
-	<li><a href="/vr_news/vr_industry_news/1971.html" title="苹果或在秘密改变AR/VR行业格局">苹果或在秘密改变AR/VR行业格局</a></li><li><a href="/vr_news/vr_industry_news/1969.html" title="2016年虚拟现实领域值得关注的四个点">2016年虚拟现实领域值得关注的四个点</a></li><li><a href="/vr_news/vr_industry_news/1963.html" title="“VR产业人”虚拟现实产业报告（下）：预测2016年">“VR产业人”虚拟现实产业报告（下）：预测2016年</a></li><li><a href="/vr_news/vr_industry_news/1961.html" title="并非虚拟的虚拟现实简史">并非虚拟的虚拟现实简史</a></li><li><a href="/vr_news/vr_industry_news/1959.html" title="为了让你尽快用上虚拟现实，谷歌一直在努力">为了让你尽快用上虚拟现实，谷歌一直在努力</a></li>
- -->
-</ul>
-</div>
-<a name="pl"></a>
-<div class="blank20"></div><div class="feelings">
-	<!-- <iframe id="mood_frame" width="538" height="200" src="/e/extend/mood/?classid=2&id=1993" marginWidth=0 marginHeight=0 frameborder="0" scrolling="no">
-	</iframe> -->
-	</div></div></div>
-<div class="disclaimer">免责声明：本站转载文章仅代表作者个人观点，与立体时代无关。其原创性以及文中陈述文字和内容未经本站证实，对本文以及全部或者部分内容、文字的真实性、完整性、及时性本站不作任何保证或承诺，请读者仅作参考，并请自行核实相关内容。</div><div class="o cl ptm pbm"><div class="left_boxs_share">
-<!-- Baidu Button BEGIN -->
-<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"> <a class="bds_qzone"></a> <a class="bds_tsina"></a> <a class="bds_tqq"></a> <a class="bds_renren"></a> <a class="bds_kaixin001"></a> <a class="bds_qq"></a> <a class="bds_douban"></a> <a class="bds_hi"></a> <a class="bds_baidu"></a> <a class="bds_tqf"></a> <span class="bds_more">更多</span> <a class="shareCount"></a> </div>
-<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=482896" ></script> 
-<script type="text/javascript" id="bdshell_js"></script> 
-<script type="text/javascript">
-document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
-</script> 
-<!-- Baidu Button END --> 
-</div></div>
-<div class="pren pbm cl">
-	<em>上一篇：<notempty name="preNext['0']">
-		<a href='__URL__/single/id/{$preNext[0].info_detail_id}'>{$preNext['0'].info_detail_title}</a>
-		<else />
-			没有数据！
-	</notempty></em><br/>
-	<em>下一篇：<notempty name="preNext['2']">
-			<a href='__URL__/single/id/{$preNext[2].info_detail_id}'>{$preNext['2'].info_detail_title}</a>
-		<else />
-			没有数据！
-	</notempty></em>
-</div>
-</div>
-<div id="comment" class="bm">
-<script>
-function CheckPl(obj)
-{
-if(obj.saytext.value=="")
-{
-alert("您没什么话要说吗？");
-obj.saytext.focus();
-return false;
-}
-return true;
-}
-</script>
-<div class="bm_h cl">
-<h3>最新评论</h3>
-</div>
-<div id="comment_ul" class="bm_c">
-	<a name="comment_anchor_4"></a>
-<script src="/Public/Home/Scripts/995b148d84f74db7b507e84ee08fbb39.js"></script>
-<div id="infocommentarea"> </div><!-- <script type="text/javascript" src="/Public/Home/Scripts/142d05ae81264573b35e43533b214355.js"></script> -->
-	<p class="ptm pbm"><a href="/e/pl/?classid=2&amp;id=1993">共有<span>{$vo.info_detail_commentnum}</span>条评论</a></p>
-<div id="commentlist">
-	<foreach name="comment" item="cl">
-		<div class="pren pbm cl ucomment" style="border:1px solid #ccc;margin-top:5px;height:55px;">
-			<em><span style="display:block;float:left;width:700px;">
+                    <p style="text-align: center;"><img src="/Public/Home/Picture/weixin.jpg"
+                                                        data-bd-imgshare-binded="1" alt=" " width="220" height="220"/>
+                    </p>
+
+                    <p style="text-align: center;"><span
+                            style="color: rgb(102, 204, 204);"><strong>无需注册,直接扫描购买!</strong></span></p>
+
+                    <div id="click_div">
+                        <div class="left_boxs_tit4">
+                            <div class="blank10"></div>
+                            <h2>关注“{$vo.info_detail_title}”的人还喜欢</h2>
+                            <ul>
+                                <volist name="tlist" id="v">
+                                    <li><a href="__URL__/single/id/{$v.info_detail_id}" title="{$v.info_detail_title}">{$v.info_detail_title}</a>
+                                    </li>
+                                </volist>
+                            </ul>
+                        </div>
+                        <a name="pl"></a>
+
+                        <div class="blank20"></div>
+                        <div class="feelings">
+                            <!-- <iframe id="mood_frame" width="538" height="200" src="/e/extend/mood/?classid=2&id=1993" marginWidth=0 marginHeight=0 frameborder="0" scrolling="no">
+                            </iframe> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="disclaimer">
+                    免责声明：本站所收录的内容均来自于互联网,请读者下载后24小时内自行删除。
+                </div>
+                <div class="o cl ptm pbm">
+                    <div class="left_boxs_share">
+                        <!-- Baidu Button BEGIN -->
+                        <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"><a class="bds_qzone"></a> <a
+                                class="bds_tsina"></a> <a class="bds_tqq"></a> <a class="bds_renren"></a> <a
+                                class="bds_kaixin001"></a> <a class="bds_qq"></a> <a class="bds_douban"></a> <a
+                                class="bds_hi"></a> <a class="bds_baidu"></a> <a class="bds_tqf"></a> <span
+                                class="bds_more">更多</span> <a class="shareCount"></a></div>
+                        <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=482896"></script>
+                        <script type="text/javascript" id="bdshell_js"></script>
+                        <script type="text/javascript">
+                            document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+                        </script>
+                        <!-- Baidu Button END -->
+                    </div>
+                </div>
+                <div class="pren pbm cl">
+                    <em>上一篇：
+                        <notempty name="preNext['1']">
+                            <a href='__URL__/single/id/{$preNext[0].info_detail_id}'>{$preNext['1'].info_detail_title}</a>
+                            <else/>
+                            没有数据！
+                        </notempty>
+                    </em><br/>
+                    <em>下一篇：
+                        <notempty name="preNext['0']">
+                            <a href='__URL__/single/id/{$preNext[0].info_detail_id}'>{$preNext['0'].info_detail_title}</a>
+                            <else/>
+                            没有数据！
+                        </notempty>
+                    </em>
+                </div>
+            </div>
+            <div id="comment" class="bm">
+                <script>
+                    function CheckPl(obj) {
+                        if (obj.saytext.value == "") {
+                            alert("您没什么话要说吗？");
+                            obj.saytext.focus();
+                            return false;
+                        }
+                        return true;
+                    }
+                </script>
+                <div class="bm_h cl">
+                    <h3>最新评论</h3>
+                </div>
+                <div id="comment_ul" class="bm_c">
+                    <a name="comment_anchor_4"></a>
+                    <script src="/Public/Home/Scripts/995b148d84f74db7b507e84ee08fbb39.js"></script>
+                    <div id="infocommentarea"></div>
+                    <!-- <script type="text/javascript" src="/Public/Home/Scripts/142d05ae81264573b35e43533b214355.js"></script> -->
+                    <p class="ptm pbm"><a
+                            href="/e/pl/?classid=2&amp;id=1993">共有<span>{$vo.info_detail_commentnum}</span>条评论</a></p>
+
+                    <div id="commentlist">
+                        <foreach name="comment" item="cl">
+                            <div class="pren pbm cl ucomment" style="border:1px solid #ccc;margin-top:5px;height:55px;">
+                                <em><span style="display:block;float:left;width:700px;">
 				用户
 				<if condition="$cl.phone neq null">
-					{$cl.phone}
-					<else />
-					{$cl.email}
-				</if>评论:
+                    {$cl.phone}
+                    <else/>
+                    {$cl.email}
+                </if>评论:
 				</span>
-				<span style="display:block;float:left;font-size:15px;margin-left:150px;width:550px;">{$cl.info_comment_content}</span>
-				<span style="display:block;float:right;">{$cl.info_comment_time|date="Y-m-d H:i:s",###}</span>
-			</em>
-			<br/>
-		</div>
-	</foreach>
-</div>
-<form action="javascript:void(0);"  autocomplete="off" method="post" name="saypl" id="saypl">
-	<div class="tedt">
-	<div class="area">
-		<textarea  name="info_comment_content" rows="3" id="saytext" class="pt" onkeydown="ctrlEnter(event, &#39;commentsubmit_btn&#39;);">
+                                    <span style="display:block;float:left;font-size:15px;margin-left:150px;width:550px;">{$cl.info_comment_content}</span>
+                                    <span style="display:block;float:right;">{$cl.info_comment_time|date="Y-m-d H:i:s",###}</span>
+                                </em>
+                                <br/>
+                            </div>
+                        </foreach>
+                    </div>
+                    <form action="javascript:void(0);" autocomplete="off" method="post" name="saypl" id="saypl">
+                        <div class="tedt">
+                            <div class="area">
+		<textarea name="info_comment_content" rows="3" id="saytext" class="pt"
+                  onkeydown="ctrlEnter(event, &#39;commentsubmit_btn&#39;);">
 		
 		</textarea>
-		<input name="info_detail_id" type="hidden" id="infoid" value="{$vo.info_detail_id}" />
-		<input name="info_detail_commentnum" type="hidden"  value="{$vo.info_detail_commentnum}" size="16" />
-		<input name="classid" type="hidden" id="classid" value="2" />
-		<input name="enews" type="hidden" id="enews" value="AddPl" />
-		<input name="repid" type="hidden" id="repid" value="0" />
-	<!-- <input type="hidden" name="ecmsfrom" value=""> -->
-	</div>
-	</div><br>
-	<input name="user_id" type="hidden" id="uid" value="{$Think.session.user_info.id}" size="16" />
-	验证码:	<input name="code" id="code" type="text" class="inputText" size="10" /> 
-	<img src="__URL__/code" onclick="this.src='__URL__/code?rand='+Math.random()" align="absmiddle" /> 
-	<!--<input name="nomember" type="checkbox" id="nomember" value="1" checked="checked" />
-	匿名发表--> 
-	<button name="commentsubmit_btn" id="commentsubmit_btn" value="true" class="pn">
-		<strong>评论</strong>
-	</button>
-	
-	所有评论仅代表网友意见，不代表VR186立场。
-</form>
-<script>
-	 $('#commentsubmit_btn').click(function (){
-		 jq.post(
-			'__URL__/comment',
-		 	jq('#saypl').serialize(),
-		 	function (data){
-		 		//var dt = JSON.parse(data);
-		 		var dt = data;
-		 		if(dt.status == 'yes'){
-		 			//评论成功
-		 			jq('.ucomment').remove();
-		 			if(dt['message'].length){
-		 				var str = '';
-		 				for(var i = 0; i < dt['message'].length; i++){
-		 					str = str + '<div class="pren pbm cl ucomment" style="border:1px solid #ccc;margin-top:5px;height:55px;">';
-		 					str = str +  '<em><span style="display:block;float:left;width:700px;">';
-		 					str = str +	 '用户';
-		 					if(dt['message'][i].phone != null){
-		 						str = str + dt['message'][i].phone;
-		 					}else{
-		 						str = str + dt['message'][i].email;
-		 					}
-		 					str = str + '评论:';
-		 					str = str + '</span>';
-		 					str = str + '<span style="display:block;float:left;font-size:15px;margin-left:150px;width:550px;">'+dt['message'][i].info_comment_content+'</span>';
-		 					str = str + '<span style="display:block;float:right;">';
-		 					var d = new Date(dt['message'][i].info_comment_time * 1000);    //根据时间戳生成的时间对象
-	        	           	var date = (d.getFullYear()) + "-" + (d.getMonth() + 1) + "-" +(d.getDate()) + " " + (d.getHours()) + ":" + (d.getMinutes()) + ":" + (d.getSeconds());
-		 					str = str + date;
-	        	           	str = str + '</span>';
-		 					str = str + '</em>';
-		 					str = str + '<br/>';
-		 					str = str + '</div>';
-		 				}
-		 				
-		 				jq('#commentlist').append(str);
-		 				jq('#saytext').val('');
-		 				jq('#code').val('');
-		 				alert('评论成功！');
-		 				
-		 			}else{
-		 				alert('系统错误！');
-		 			}
-		 		}else if(dt.status == 'no'){
-		 			alert(dt.message);
-		 		}else{
-		 			alert('系统错误！');
-		 		}
-		 	},
-		 	'json'
-		 );
-	 });
-		 /* function doAjax(){
-			uid = $('#uid').val();
-			text = $('#saytext').val();
-			id = $('#infoid').val();
-			code = $('#code').val();
-			$.ajax({
-				type:'POST',
-				url:'__URL__/comment',
-				data:"user_id="+uid+"&info_comment_content="+text+"&info_detail_id="+id+"&code="+code,
-				datatype:'json',
-				success:function(data){
-					var d = eval(data);
-					alert(d);
-					if(Boolean(d.error)){
-						alert('评论不成功！');
-					}else{
-						window.location.href='__URL__/single/id/{$vo.info_detail_id}';
-					}
-				}
-			});
-			return false;
-		} */
-	
-</script>
-</div>
-</div>
-</div>
-<div class="deanwpr">
- <div class="deanwprc deanshadow deanborder deanfff">
-  <div class="deanp14">
-<div class="deantabs">
-                    <ul class="deantabname">
-                        <li class="cur">专题推荐</li>
-                        <li>推荐搜索</li>
-                        <div class="clear"></div>
-                    </ul>
-                    <div class="clear"></div>
-                    <ul class="deantabc top15">
-                        <li style="display:block;"><!--[diy=deantabc1]-->
-                        <div id="deantabc1" class="area">
-                        <div id="framewbBJor" class="frame move-span cl frame-1">
-                        <div id="framewbBJor_left" class="column frame-1-c">
-                        <div id="framewbBJor_left_temp" class="move-span temp"></div>
-                        <div id="portal_block_36" class="block move-span">
-                        <div id="portal_block_36_content" class="dxb_bc">
-                        <div class="portal_block_summary searchkey">
-              
-                        <a target="_blank" href="/s/2015unite">unite 2015-VR186</a>                                              
-                            
-                        <a target="_blank" href="/s/Gear_VR">Gear VR</a>                                              
-                            
-                        <a target="_blank" href="/s/hololens">hololens</a>                                              
-                            
-                        <a target="_blank" href="/s/tos">TencentOS</a>                                              
-                            
-                        <a target="_blank" href="/s/io">谷歌io大会2015</a>                                              
-                            
-                        <a target="_blank" href="/s/magicleap">magic leap</a>                                              
-                                                             
-                        </div></div></div></div></div></div><!--[/diy]--></li>
-                        <li><!--[diy=deantabc2]--><div id="deantabc2" class="area">
-                        <div id="framepL5TLW" class="frame move-span cl frame-1">
-                        <div id="framepL5TLW_left" class="column frame-1-c">
-                        <div id="framepL5TLW_left_temp" class="move-span temp"></div>
-                        <div id="portal_block_37" class="block move-span">
-                        <div id="portal_block_37_content" class="dxb_bc">
-                        <div class="portal_block_summary searchkey">                        
-                               <a href="http://www.vr186.com/e/tags/?tagname=虚拟现实">虚拟现实</a><a href="http://www.vr186.com/e/tags/?tagname=VR">VR</a><a href="http://www.vr186.com/e/tags/?tagname=虚拟现实游戏">虚拟现实游戏</a><a href="http://www.vr186.com/e/tags/?tagname=暴风魔镜">暴风魔镜</a><a href="http://www.vr186.com/e/tags/?tagname=oculus rift">oculus rift</a><a href="http://www.vr186.com/e/tags/?tagname=dk2">dk2</a><a href="http://www.vr186.com/e/tags/?tagname=墨菲斯">墨菲斯</a><a href="http://www.vr186.com/e/tags/?tagname=Gear VR">Gear VR</a><a href="http://www.vr186.com/e/tags/?tagname=谷歌眼镜">谷歌眼镜</a><a href="http://www.vr186.com/e/tags/?tagname=cardboard">cardboard</a> <a href="http://www.vr186.com/e/tags/?tagname=虚拟现实电影">虚拟现实电影</a><a href="http://www.vr186.com/e/tags/?tagname=vr手机盒">vr手机盒</a><a href="http://www.vr186.com/e/tags/?tagname=虚拟现实旅游">虚拟现实旅游</a>                
-                        </div></div></div></div></div></div><!--[/diy]--></li>
-                    </ul>
-                    
-                </div> </div></div>
+                                <input name="info_detail_id" type="hidden" id="infoid" value="{$vo.info_detail_id}"/>
+                                <input name="info_detail_commentnum" type="hidden" value="{$vo.info_detail_commentnum}"
+                                       size="16"/>
+                                <input name="classid" type="hidden" id="classid" value="2"/>
+                                <input name="enews" type="hidden" id="enews" value="AddPl"/>
+                                <input name="repid" type="hidden" id="repid" value="0"/>
+                                <!-- <input type="hidden" name="ecmsfrom" value=""> -->
+                            </div>
+                        </div>
+                        <br>
+                        <input name="user_id" type="hidden" id="uid" value="{$Think.session.user_info.id}" size="16"/>
+                        验证码: <input name="code" id="code" type="text" class="inputText" size="10"/>
+                        <img src="__URL__/code" onclick="this.src='__URL__/code?rand='+Math.random()"
+                             align="absmiddle"/>
+                        <!--<input name="nomember" type="checkbox" id="nomember" value="1" checked="checked" />
+                        匿名发表-->
+                        <button name="commentsubmit_btn" id="commentsubmit_btn" value="true" class="pn">
+                            <strong>评论</strong>
+                        </button>
 
-        <div class="deanwprc deanshadow deanborder deanfff">
-            <div class="deanp14">
-                <div class="clear"></div>
-                <div class="clear"></div>
-                <div class="deanrank top25">
-                    <h2>推荐资讯</h2>
-                    <div class="clear"></div>
-                    <ul class="deanrankc">
-                    <div id="deanrank" class="area">
-                    <div id="framepvvJiG" class="frame move-span cl frame-1">
-                    <div id="framepvvJiG_left" class="column frame-1-c">
-                    <div id="framepvvJiG_left_temp" class="move-span temp"></div>
-                    <div id="portal_block_44" class="block move-span">
-                    <div id="portal_block_44_content" class="dxb_bc">
-                    <li><a href="/vr_news/vr_industry_news/1066.html" title="超一流画质！Crytek激进推进虚拟现实">超一流画质！Crytek激进推进虚拟现实</a></li><li><a href="/vr_news/vr_industry_news/1083.html" title="AMD专业显卡提供虚拟现实教育方案">AMD专业显卡提供虚拟现实教育方案</a></li><li><a href="/vr_news/vr_industry_news/980.html" title="Google在I/O大会上的总结 专业人士进！">Google在I/O大会上的总结 专业人士进</a></li><li><a href="/vr_news/vr_industry_news/1527.html" title="GroupM开发虚拟现实商业活动创意解决方案">GroupM开发虚拟现实商业活动创意解决</a></li><li><a href="/vr_news/games/1630.html" title="赛车体验能否成为PSVR打开VR游戏市场的试金石">赛车体验能否成为PSVR打开VR游戏市场</a></li><li><a href="/vr_news/vr_product_information/1393.html" title="StepVR：背着3公斤装备，体验真正的VR">StepVR：背着3公斤装备，体验真正的V</a></li><li><a href="/vr_news/vr_product_information/1042.html" title="获1500万美元投资 IC Real Tech将推VR监控摄像头">获1500万美元投资 IC Real Tech将推V</a></li><li><a href="/vr_news/vr_product_information/356.html" title="Immersis：把客厅变身3D虚拟现实空间">Immersis：把客厅变身3D虚拟现实空间</a></li><li><a href="/vr_news/games/1038.html" title="《卫报》：育碧已经建立社交虚拟现实模型">《卫报》：育碧已经建立社交虚拟现实</a></li><li><a href="/vr_news/vr_industry_news/1056.html" title="世界自然基金会使用Google Cardboard倡导保护大堡礁活动">世界自然基金会使用Google Cardboard</a></li><li><a href="/vr_news/vr_product_information/1784.html" title="除了白菜价 消费版Gear VR还用什么吸引用户？">除了白菜价 消费版Gear VR还用什么吸</a></li><li><a href="/vr_news/movies/1145.html" title="Oculus和顶级3D实拍内容工作室合作打造VR电影内容">Oculus和顶级3D实拍内容工作室合作打</a></li>                    </div></div></div></div></div>
-                    </ul>
+                        所有评论仅代表网友意见，不代表VR186立场。
+                    </form>
+                    <script>
+                        $('#commentsubmit_btn').click(function () {
+                            jq.post(
+                                    '__URL__/comment',
+                                    jq('#saypl').serialize(),
+                                    function (data) {
+                                        //var dt = JSON.parse(data);
+                                        var dt = data;
+                                        if (dt.status == 'yes') {
+                                            //评论成功
+                                            jq('.ucomment').remove();
+                                            if (dt['message'].length) {
+                                                var str = '';
+                                                for (var i = 0; i < dt['message'].length; i++) {
+                                                    str = str + '<div class="pren pbm cl ucomment" style="border:1px solid #ccc;margin-top:5px;height:55px;">';
+                                                    str = str + '<em><span style="display:block;float:left;width:700px;">';
+                                                    str = str + '用户';
+                                                    if (dt['message'][i].phone != null) {
+                                                        str = str + dt['message'][i].phone;
+                                                    } else {
+                                                        str = str + dt['message'][i].email;
+                                                    }
+                                                    str = str + '评论:';
+                                                    str = str + '</span>';
+                                                    str = str + '<span style="display:block;float:left;font-size:15px;margin-left:150px;width:550px;">' + dt['message'][i].info_comment_content + '</span>';
+                                                    str = str + '<span style="display:block;float:right;">';
+                                                    var d = new Date(dt['message'][i].info_comment_time * 1000);    //根据时间戳生成的时间对象
+                                                    var date = (d.getFullYear()) + "-" + (d.getMonth() + 1) + "-" + (d.getDate()) + " " + (d.getHours()) + ":" + (d.getMinutes()) + ":" + (d.getSeconds());
+                                                    str = str + date;
+                                                    str = str + '</span>';
+                                                    str = str + '</em>';
+                                                    str = str + '<br/>';
+                                                    str = str + '</div>';
+                                                }
+
+                                                jq('#commentlist').append(str);
+                                                jq('#saytext').val('');
+                                                jq('#code').val('');
+                                                alert('评论成功！');
+
+                                            } else {
+                                                alert('系统错误！');
+                                            }
+                                        } else if (dt.status == 'no') {
+                                            alert(dt.message);
+                                        } else {
+                                            alert('系统错误！');
+                                        }
+                                    },
+                                    'json'
+                            );
+                        });
+                    </script>
                 </div>
-                <div class="clear"></div>
-                
-                <div class="deantabs top25">
-                    <ul class="deantabname">
-                        <li class="cur">官方微信</li>
-                        <li>社区微博</li>
-                        <div class="clear"></div>
-                    </ul>
-                    <div class="clear"></div>
-                     <ul class="deantabc top15">
-                                <li style="display:block;text-align:center;"><div id="deantabc4" class="area"><div id="framexSFs84" class="frame move-span cl frame-1"><div id="framexSFs84_left" class="column frame-1-c"><div id="framexSFs84_left_temp" class="move-span temp"></div><div id="portal_block_99" class="block move-span"><div id="portal_block_99_content" class="dxb_bc"><div class="portal_block_summary"><a href="#" target="_blank"><img src="/Public/Home/Picture/weixin.jpg" width="258" /></a>
-                            <div class="clear"></div>
-
-                            <a href="#" target="_blank" style="color:#333;">社区微信公众平台</a></div></div></div></div></div></div></li>
-                                <li><div id="deantabc3" class="area"><div id="frameZB0jpU" class="frame move-span cl frame-1"><div id="frameZB0jpU_left" class="column frame-1-c"><div id="frameZB0jpU_left_temp" class="move-span temp"></div><div id="portal_block_98" class="block move-span"><div id="portal_block_98_content" class="dxb_bc"><div class="portal_block_summary"><iframe width="270" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=270&height=550&fansRow=1&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1944968250&verifier=687040f6&dpc=1"></iframe></div></div></div></div></div></div></li>
-                            </ul>                </div>
-            
-                <script type="text/javascript">
-                    jq(".deantabname li").each(function(s){
-                        jq(this).hover(function(){
-                            jq(this).addClass("cur").siblings().removeClass("cur");
-                            jq(".deantabc li").eq(s).show().siblings().hide();
-                        })
-                    })
-                </script>
             </div>
-            
         </div>
-    </div><div class="clear"></div></div></div>
-<div class="deanfooter">
-<div class="deanftinfo">
-{$system.banquan}{$system.beian}{$system.tongji}
+        <div class="deanwpr">
+            <div class="deanwprc deanshadow deanborder deanfff">
+                <div class="deanp14">
+                    <div class="deantabs">
+                        <ul class="deantabname">
+                            <li class="cur">热门搜索</li>
+                            <li>专题推荐</li>
+                            <div class="clear"></div>
+                        </ul>
+                        <div class="clear"></div>
+                        <ul class="deantabc top15">
+                            <li style="display:block;"><!--[diy=deantabc1]-->
+                                <div id="deantabc1" class="area">
+                                    <div id="framewbBJor" class="frame move-span cl frame-1">
+                                        <div id="framewbBJor_left" class="column frame-1-c">
+                                            <div id="framewbBJor_left_temp" class="move-span temp"></div>
+                                            <div id="portal_block_36" class="block move-span">
+                                                <div id="portal_block_36_content" class="dxb_bc">
+                                                    <div class="portal_block_summary searchkey">
+                                                        <volist name="hot_search" id="vo">
+                                                            <a target="_blank">{$vo.key}</a>
+                                                        </volist>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!--[/diy]--></li>
+                            <li><!--[diy=deantabc2]-->
+                                <div id="deantabc2" class="area">
+                                    <div id="framepL5TLW" class="frame move-span cl frame-1">
+                                        <div id="framepL5TLW_left" class="column frame-1-c">
+                                            <div id="framepL5TLW_left_temp" class="move-span temp"></div>
+                                            <div id="portal_block_37" class="block move-span">
+                                                <div id="portal_block_37_content" class="dxb_bc">
+                                                    <div class="portal_block_summary searchkey">
+                                                        <volist name="hot_recomment" id="vo">
+                                                            <a target="_blank">{$vo.key}</a>
+                                                        </volist>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!--[/diy]--></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="deanwprc deanshadow deanborder deanfff">
+                <div class="deanp14">
+                    <div class="clear"></div>
+                    <div class="clear"></div>
+                    <div class="deanrank top25">
+                        <h2>热门资源</h2>
+                        <volist name="hot_download" id="vo">
+                            <li>
+                                <a target="_blank" title="{$vo.info_detail_title}">{$vo.info_detail_title}</a>
+                            </li>
+                        </volist>
+
+                        <div class="clear"></div>
+                        <ul class="deanrankc">
+                            <div id="deanrank" class="area">
+                                <div id="framepvvJiG" class="frame move-span cl frame-1">
+                                    <div id="framepvvJiG_left" class="column frame-1-c">
+                                        <div id="framepvvJiG_left_temp" class="move-span temp"></div>
+                                        <div id="portal_block_44" class="block move-span">
+                                            <div id="portal_block_44_content" class="dxb_bc">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+
+                    <div class="deantabs top25">
+                        <ul class="deantabname">
+                            <li class="cur">官方微信</li>
+                            <li>社区微博</li>
+                            <div class="clear"></div>
+                        </ul>
+                        <div class="clear"></div>
+                        <ul class="deantabc top15">
+                            <li style="display:block;text-align:center;">
+                                <div id="deantabc4" class="area">
+                                    <div id="framexSFs84" class="frame move-span cl frame-1">
+                                        <div id="framexSFs84_left" class="column frame-1-c">
+                                            <div id="framexSFs84_left_temp" class="move-span temp"></div>
+                                            <div id="portal_block_99" class="block move-span">
+                                                <div id="portal_block_99_content" class="dxb_bc">
+                                                    <div class="portal_block_summary"><a href="#" target="_blank"><img
+                                                            src="/Public/Home/Picture/weixin.jpg" width="258"/></a>
+
+                                                        <div class="clear"></div>
+
+                                                        <a href="#" target="_blank" style="color:#333;">社区微信公众平台</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div id="deantabc3" class="area">
+                                    <div id="frameZB0jpU" class="frame move-span cl frame-1">
+                                        <div id="frameZB0jpU_left" class="column frame-1-c">
+                                            <div id="frameZB0jpU_left_temp" class="move-span temp"></div>
+                                            <div id="portal_block_98" class="block move-span">
+                                                <div id="portal_block_98_content" class="dxb_bc">
+                                                    <div class="portal_block_summary">
+                                                        <iframe width="270" height="550" class="share_self"
+                                                                frameborder="0" scrolling="no"
+                                                                src="http://widget.weibo.com/weiboshow/index.php?language=&width=270&height=550&fansRow=1&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1944968250&verifier=687040f6&dpc=1"></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <script type="text/javascript">
+                        jq(".deantabname li").each(function (s) {
+                            jq(this).hover(function () {
+                                jq(this).addClass("cur").siblings().removeClass("cur");
+                                jq(".deantabc li").eq(s).show().siblings().hide();
+                            })
+                        })
+                    </script>
+                </div>
+
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
 </div>
+<div class="deanfooter">
+    <div class="deanftinfo">
+        {$system.banquan}{$system.beian}{$system.tongji}
+    </div>
 </div>
 <div id="scrolltop" style="left: auto; right: 0px; visibility: hidden;">
-<span hidefocus="true"><a title="返回顶部" onclick="window.scrollTo(&#39;0&#39;,&#39;0&#39;)" class="scrolltopa"><b>返回顶部</b></a></span>
+    <span hidefocus="true"><a title="返回顶部" onclick="window.scrollTo(&#39;0&#39;,&#39;0&#39;)"
+                              class="scrolltopa"><b>返回顶部</b></a></span>
 </div>
 
 <!--<script src="Scripts/jq.snow.js"></script>
@@ -450,4 +512,20 @@ return true;
 	</script>-->
 <script src="/Public/Home/Scripts/657e223da3b84f03bf1d5cd7ddb12db3.js"></script>
 <script src="/Public/Home/Scripts/d030c755df6f4b8e83c25947a2bd0e8d.js"></script>
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"2","bdPos":"right","bdTop":"100"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></body></html>
+<script>window._bd_share_config = {
+    "common": {
+        "bdSnsKey": {},
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": "",
+        "bdStyle": "0",
+        "bdSize": "16"
+    },
+    "slide": {"type": "slide", "bdImg": "2", "bdPos": "right", "bdTop": "100"},
+    "image": {"viewList": ["qzone", "tsina", "tqq", "renren", "weixin"], "viewText": "分享到：", "viewSize": "16"},
+    "selectShare": {"bdContainerClass": null, "bdSelectMiniList": ["qzone", "tsina", "tqq", "renren", "weixin"]}
+};
+with (document)0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+</body>
+</html>

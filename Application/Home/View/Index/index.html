@@ -422,8 +422,12 @@
                 <div class="deanp14">
                     <div class="clear"></div>
                     <div class="deanactive index_zy">
-                        <h2>热门资源下载 <a href="/Home/Res/">更多</a></h2>
-
+                        <h2>热门资源</h2>
+                        <volist name="hot_download" id="vo">
+                            <li>
+                                <a target="_blank" title="{$vo.info_detail_title}">{$vo.info_detail_title}</a>
+                            </li>
+                        </volist>
                         <div class="deantabs top25">
                             <ul class="deantabname">
                                 <li class="cur">热门搜索</li>
