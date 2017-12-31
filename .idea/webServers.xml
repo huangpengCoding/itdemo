@@ -9,6 +9,13 @@
           </advancedOptions>
         </fileTransfer>
       </webServer>
+      <webServer id="a1b70fa0-a2c3-4325-a1ee-e0a06a83c052" name="home" url="http://192.168.0.190">
+        <fileTransfer host="192.168.0.190" port="22" rootFolder="/home/huangpeng" accessType="SFTP" password="dfdadfcfdfc4dfcd" username="huangpeng">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

@@ -16,6 +16,7 @@ class LoginController extends Controller
     //加载登录模板
     public function index()
     {
+
         $this->display();
     }
 }

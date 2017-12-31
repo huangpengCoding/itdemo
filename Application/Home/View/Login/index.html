@@ -7,8 +7,9 @@
     <script type="text/javascript" src="/Public/Home/Scripts/login.js"></script>
     <link href="/Public/Home/Css/login2.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
-<h1>个人中心快速登录注册<sup>2016</sup></h1>
+<!--<body background="/Public/Home/Images/78abaab9a9a1bcbfed6662e8733b8cf0.jpg">-->
+<body style="background-image: url('/Public/Home/Images/b3cc674e04d91e48ec0ee9a4e22b3eb2.jpg');background-size:cover">
+<h1><img src="/Public/Home/Images/itdemo_logo4.png"/></h1>
 <!-- login开始 -->
 <div class="login" style="margin-top:50px;">
     <div class="header">
@@ -20,7 +21,7 @@
         </div>
     </div>
     <!--登录-->
-    <div class="web_qr_login" id="web_qr_login" style="display: block; height: 235px;">
+    <div class="web_qr_login" id="web_qr_login" style="display: block; height: 400px;">
         <div class="web_login" id="web_login">
             <div class="login-box">
                 <div class="login_form">
@@ -29,25 +30,43 @@
                           class="loginForm" method="post"><input type="hidden" name="did" value="0"/>
                         <input type="hidden" name="to" value="log"/>
 
-                        <div id="userCue1" class="cue">快速登录请注意格式</div>
-
+                        <div id="userCue1" class="cue">欢迎登录呆猫</div>
                         <div class="uinArea" id="uinArea">
                             <label class="input-tips" for="u">帐号：</label>
 
                             <div class="inputOuter" id="uArea">
-                                <input type="text" id="u" name="username" class="inputstyle" placeholder="手机/邮箱"/>
+                                <input type="text" id="u" name="username" class="inputstyle2" placeholder="手机/邮箱"/>
                             </div>
                         </div>
+
                         <div class="pwdArea" id="pwdArea">
                             <label class="input-tips" for="p">密码：</label>
 
                             <div class="inputOuter" id="pArea">
-                                <input type="password" id="p" name="p" class="inputstyle"/>
+                                <input type="password" id="p" name="p" class="inputstyle2"/>
+
+                            </div>
+                        </div>
+                        <div class="uinArea">
+                            <label class="input-tips" for="p"></label>
+
+                            <div>
+                                <img id="change_img" src="{:U('Public/verify')}">
+                                <a id="change_code" style="cursor:pointer">看不清</a>
+                            </div>
+                        </div>
+                        <div class="uinArea">
+                            <label class="input-tips">验证：</label>
+
+                            <div class="inputOuter">
+                                <input type="text" id="verifycode" name="verifycode" class="inputstyle2"
+                                       placeholder="验证码"/>
                             </div>
                         </div>
                         <div style="padding-left:50px;margin-top:20px;"><input type="submit" id="log" value="登 录"
+                                                                               disabled="disabled"
                                                                                style="width:150px;"
-                                                                               class="button_blue"/></div>
+                                                                               class="button_red"/></div>
                         <a href="#" class="zcxy" target="_blank">忘记密码</a>
                     </form>
                     <!-- 登录表单结束 -->
@@ -65,7 +84,7 @@
                 <input type="hidden" name="to" value="reg"/>
                 <input type="hidden" name="did" value="0"/>
                 <ul class="reg_form" id="reg-ul">
-                    <div id="userCue" class="cue">快速注册请注意格式</div>
+                    <div id="userCue" class="cue">欢迎注册呆猫</div>
                     <li>
                         <label for="user" class="input-tips2">用户名：</label>
 
@@ -100,7 +119,7 @@
                     </li>
                     <li>
                         <div class="inputArea">
-                            <input type="button" id="reg" style="margin-top:10px;margin-left:85px;" class="button_blue"
+                            <input type="button" id="reg" style="margin-top:10px;margin-left:85px;" class="button_red"
                                    value="同意协议并注册"/> <a href="#" class="zcxy" target="_blank">注册协议</a>
                         </div>
                     </li>

@@ -1,5 +1,44 @@
 $(function(){
 
+	$("#change_code").click(function() {
+		var verifyURL = "/Home/Public/verify";
+		var time = new Date().getTime();
+		$("#change_img").attr({
+			"src" : verifyURL + "/" + time
+		});
+	});
+
+
+
+
+	$("#change_img").click(function() {
+		var verifyURL = "/Home/Public/verify";
+		var time = new Date().getTime();
+		$("#change_img").attr({
+			"src" : verifyURL + "/" + time
+		});
+	});
+
+	var FLAG_VERIFYED = false;  //验证码是否通过标识
+	$("#verifycode").keyup(function() {
+		var vcode = $("#verifycode").val()
+		console.log(vcode);
+		$.post("/Home/Public/check_verify", {
+			code : vcode
+
+		}, function(data) {
+			if (data == true) {
+				//验证码输入正确
+				console.log("true");
+				FLAG_VERIFYED = true;
+			} else {
+				//验证码输入错误
+				console.log("false");
+				FLAG_VERIFYED = false;
+			}
+		});
+	});
+
 	$('#switch_qlogin').click(function(){
 		$('#switch_login').removeClass("switch_btn_focus").addClass('switch_btn');
 		$('#switch_qlogin').removeClass("switch_btn").addClass('switch_btn_focus');
