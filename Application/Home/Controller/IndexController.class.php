@@ -8,7 +8,7 @@ class IndexController extends Controller
     public function index()
     {
         //title
-        $title = M('it_type')->where('pid=0')->order('id ASC')->select();
+        $title = M('it_type')->where('pid=0')->order('weight ASC')->select();
         $this->assign('title', $title);
 
         //选中的栏目
