@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb">
 <head>
-    <title>简洁大气快速登录注册模板</title>
+    <title>IT呆猫登录注册页</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <script src="/Public/Home/Scripts/jquery-1.9.0.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="/Public/Home/Scripts/login.js"></script>
@@ -43,7 +43,7 @@
                             <label class="input-tips" for="p">密码：</label>
 
                             <div class="inputOuter" id="pArea">
-                                <input type="password" id="p" name="p" class="inputstyle2"/>
+                                <input type="password" id="p" name="password" class="inputstyle2"/>
 
                             </div>
                         </div>
@@ -64,7 +64,6 @@
                             </div>
                         </div>
                         <div style="padding-left:50px;margin-top:20px;"><input type="submit" id="log" value="登 录"
-                                                                               disabled="disabled"
                                                                                style="width:150px;"
                                                                                class="button_red"/></div>
                         <a href="#" class="zcxy" target="_blank">忘记密码</a>
@@ -110,13 +109,29 @@
                         </div>
                     </li>
                     <li>
-                        <label for="code" class="input-tips2">验证码 : </label>
+                        <label class="input-tips2"></label>
 
-                        <div class="inputOuter2">
-                            <input type="text" id="code" name="code" maxlength="6" class="inputstyle2" size="2"/>
-                            <!-- <a class="zcxy" id="send" disabled>发&nbsp;&nbsp;送</a> -->
+                        <div>
+                            <img id="change_img2" src="{:U('Public/verify')}">
+                            <a id="change_code2" style="cursor:pointer">看不清</a>
                         </div>
                     </li>
+                    <li>
+                        <label for="verifycode2" class="input-tips2">验证码 : </label>
+
+                        <div class="inputOuter2">
+                            <input type="text" id="verifycode2" name="verifycode2" maxlength="6" class="inputstyle2"
+                                   size="2"/>
+                        </div>
+                    </li>
+                    <!--<li>-->
+                    <!--<label for="code" class="input-tips2">手机校验 : </label>-->
+
+                    <!--<div class="inputOuter2">-->
+                    <!--<input type="text" id="code" name="code" maxlength="6" class="inputstyle2" size="2"-->
+                    <!--placeholder="点击获取验证码"/>-->
+                    <!--</div>-->
+                    <!--</li>-->
                     <li>
                         <div class="inputArea">
                             <input type="button" id="reg" style="margin-top:10px;margin-left:85px;" class="button_red"
