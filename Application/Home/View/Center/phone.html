@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>手机设置 - {$system.name}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="{$system.key}"/>
+    <meta name="description" content="{$system.des}"/>
+    <link rel="stylesheet" href="__PUBLIC__/Center/css/base.css" type="text/css"/>
+    <link rel="stylesheet" href="__PUBLIC__/Center/css/common/common-less.css" type="text/css"/>
+    <link rel="stylesheet" href="__PUBLIC__/Center/component/logic/login/login-regist.css" type="text/css"/>
+    <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="__PUBLIC__/Center/css/settings.css" type="text/css"/>
+</head>
+<body>
+<div id="header">
+    <div class="page-container" id="nav" style="background-color: #DC143C">
+        <div class="g-menu-mini l">
+            <a href="#" class="menu-ctrl">
+                <i class="icon-menu">
+                    <img src="/Public/Home/Images/banner0104.png"/>
+                </i>
+            </a>
+            <ul class="nav-item l">
+                <li>
+                    <!--<a href="__MODULE__/index"  target="_self">网站首页</a>-->
+                    <!--<img src="/Public/Home/Images/banner0104.png"/>-->
+                </li>
+            </ul>
+        </div>
+        <div id="login-area">
+            <ul class="clearfix logined">
+                <li>
+                    <a id="nc">欢迎你 {$name}</a>
+                </li>
+                <li>
+                    <a href="__MODULE__/Login/loginout">退出登录</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="main">
+    <div class="wcontainer set-space-cont clearfix">
+        <div class="setting-left l">
+            <ul class="wrap-boxes">
+                <li>
+                    <a href="__URL__/index">个人资料</a>
+                </li>
+                <li class="nav-active">
+                    <a href="__URL__/phone" class="onactive">手机设置</a>
+                </li>
+                <li>
+                    <a href="__URL__/email">邮箱设置</a>
+                </li>
+                <li>
+                    <a href="__URL__/integral">积分猫豆</a>
+                </li>
+                <li>
+                    <a href="__URL__/password">修改密码</a>
+                </li>
+            </ul>
+        </div>
+        <div class="setting-right ">
+            <div class="setting-right-wrap wrap-boxes settings">
+
+
+                <div id="setting-profile" class="setting-wrap setting-profile">
+                    <form id="profile">
+                        <input type="hidden" name="id" id="id" value="{$user.id}"/>
+
+                        <div class="wlfg-wrap">
+                            <label class="label-name" for="nick">手机</label>
+
+                            <div class="rlf-group">
+                                <input type="text" name="phone" id="phone" class="textarea" placeholder="请绑定手机号"
+                                       value="{$phone}" disabled/>
+
+                                <p class="rlf-tip-wrap"></p>
+                                <input type="text" name="rephone" onblur="rphone();" id="rephone" class="textarea"
+                                       placeholder="新手机号" value=""/>
+
+                                <p class="rlf-tip-wrap"></p>
+                                <input type="text" name="yzm" id="yzm" class="textarea" placeholder="验证码" value=""
+                                       style="width:200px;float:left;" onchange="yz();"/>
+                                <span class="rlf-btn-green btn-block profile-btn"
+                                      style="width:170px;height:38px;margin-left:30px;float:left;background-color: #ccc;cursor:no-drop;"
+                                      id="an">获取验证码</span>
+
+                                <p class="rlf-tip-wrap"></p>
+
+                                <p class="rlf-tip-wrap"></p>
+                            </div>
+                        </div>
+
+                        <div class="wlfg-wrap">
+                            <div class="rlf-group">
+                                <span id="profile-submit" hidefocus="true" aria-role="button"
+                                      class="rlf-btn-green btn-block profile-btn"
+                                      style="background-color:#ccc;cursor:no-drop;">保存</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<div id="footer" style="background-color: #DC143C">
+    <div class="waper">
+        <div class="footerwaper clearfix">
+            <div class="followus r">
+                <a class="followus-weixin" href="javascript:;" target="_blank" title="微信">
+                    <div class="flw-weixin-box"></div>
+                </a>
+                <a class="followus-weibo" href="http://weibo.com/u/3306361973" target="_blank" title="新浪微博"></a>
+                <a class="followus-qzone" href="http://user.qzone.qq.com/1059809142/" target="_blank" title="QQ空间"></a>
+            </div>
+            <div class="footer_intro l">
+                <div class="footer_link">
+                    <ul>
+                        <volist name="title" id="vo">
+                            <li>
+                                <a href="__MODULE__/{$vo.url}/fid/{$vo.id}" hidefocus="true" title="{$vo.name}">{$vo.name}</a>
+                            </li>
+                        </volist>
+                    </ul>
+                </div>
+                <p>{$system.banquan}{$system.beian}{$system.tongji}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function fun() {
+        $.ajax({
+            type: "POST",
+            url: "__URL__/phones",
+            dataType: "json",
+            data: {
+                id: $("#id").val(),
+            },
+            success: function (data) {
+                if (data.success) {
+                    $("#phone").val(data.phone);
+                } else {
+                    $("#phone").val("获取失败");
+                }
+            },
+            error: function (jqXHR) {
+                alert("发送错误：" + jqXHR.status);
+            },
+        });
+    }
+    window.onload = fun;
+
+
+    function rphone() {
+        var phone = $("#rephone").val();
+        if (!(/^1[3|4|5|7|8]\d{9}$/.test(phone))) {
+            $("#an").attr('style', 'width:170px;height:38px;margin-left:30px;float:left;background-color: #ccc;cursor:no-drop;');
+            $("#an").attr('onclick', '');
+            $("#rephone").attr('style', 'border:1px solid #ff0000;');
+        } else if (phone == $('#phone').val()) {
+            $("#an").attr('style', 'width:170px;height:38px;margin-left:30px;float:left;background-color: #ccc;cursor:no-drop;');
+            $("#an").attr('onclick', '');
+            $("#rephone").attr('style', 'border:1px solid #ff0000;');
+        } else {
+            $.ajax({
+                type: "POST",
+                url: "__MODULE__/Login/exist",
+                dataType: "json",
+                data: {
+                    username: $("#rephone").val(),
+                },
+                success: function (data) {
+                    if (data.already_reg) {
+                        $("#an").attr('style', 'width:170px;height:38px;margin-left:30px;float:left;background-color: #ccc;cursor:no-drop;');
+                        $("#an").attr('onclick', '');
+                        $("#rephone").attr('style', 'border:1px solid #ff0000;');
+                    } else {
+                        $("#an").attr('style', 'width:170px;height:38px;margin-left:30px;float:left;');
+                        $("#an").attr('onclick', 'fs()');
+                        $("#rephone").attr('style', '');
+                    }
+                },
+                error: function (jqXHR) {
+                    alert("发送错误：" + jqXHR.status);
+                },
+            });
+
+
+        }
+
+    }
+
+    function fs() {
+        $.ajax({
+            type: "POST",
+            url: "__MODULE__/Login/code",
+            dataType: "json",
+            data: {
+                username: $("#rephone").val(),
+            },
+            success: function (data) {
+                if (data.status) {
+                    var i = 60;
+                    var j1 = setInterval(function () {
+                        if (i <= 0) {
+                            clearInterval(j2);
+                            clearInterval(j1);
+                            $("#an").attr('style', 'width:170px;height:38px;margin-left:30px;float:left;');
+                            $("#an").attr('onclick', 'fs()');
+                            $("#an").html("获取验证码");
+                        }
+                        i = i - 1;
+                    }, 1000);
+                    var j2 = setInterval(function () {
+                        $("#an").html("发送成功" + i);
+                    }, 1000);
+
+                    $("#an").html("发送成功" + i);
+                    $("#an").attr('style', 'width:170px;height:38px;margin-left:30px;float:left;background-color:#ccc;cursor:no-drop;');
+                    $("#an").attr('onclick', '');
+
+                } else {
+                    $("#an").html("发送失败");
+
+                }
+            },
+            error: function (jqXHR) {
+                alert("发送错误：" + jqXHR.status);
+            },
+        });
+    }
+
+    function yz() {
+        if ($("#yzm").val() == '') {
+            $("#profile-submit").attr('onclick', '');
+            $("#profile-submit").attr('style', 'background-color:#ccc;cursor:no-drop;');
+        } else {
+            $("#profile-submit").attr('onclick', 'bc()');
+            $("#profile-submit").attr('style', '');
+            $("#yzm").attr('style', 'width:200px;float:left;');
+        }
+    }
+
+    function bc() {
+        $.ajax({
+            type: "POST",
+            url: "__URL__/bc",
+            dataType: "json",
+            data: {
+                phone: $("#rephone").val(),
+                code: $("#yzm").val(),
+                id: $("#id").val(),
+            },
+            success: function (data) {
+                if (data.ss == '0') {
+                    $("#yzm").attr('style', 'border:1px solid #ff0000;width:200px;float:left;');
+                    $("#yzm").val('');
+                    $("#yzm").attr('placeholder', '验证码错误重新输入');
+                } else {
+                    if (data) {
+                        $("#profile-submit").html("保存成功");
+                    } else {
+                        $("#profile-submit").html("保存失败");
+                    }
+                }
+            },
+            error: function (jqXHR) {
+                alert("发送错误：" + jqXHR.status);
+            },
+        });
+
+        $.ajax({
+            type: "POST",
+            url: "__URL__/phones",
+            dataType: "json",
+            data: {
+                id: $("#id").val(),
+            },
+            success: function (data) {
+                if (data.success) {
+                    $("#phone").val(data.phone);
+                } else {
+                    $("#phone").val("获取失败");
+                }
+            },
+            error: function (jqXHR) {
+                alert("发送错误：" + jqXHR.status);
+            },
+        });
+
+        $("#rephone").val('');
+        $("#yzm").val('');
+
+
+        setTimeout(function () {
+            $("#profile-submit").html("保存");
+        }, 2000)
+    }
+
+</script>
+</body>
+</html>

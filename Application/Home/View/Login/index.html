@@ -32,10 +32,10 @@
 
                         <div id="userCue1" class="cue">欢迎登录呆猫</div>
                         <div class="uinArea" id="uinArea">
-                            <label class="input-tips" for="u">帐号：</label>
+                            <label class="input-tips" for="u">手机：</label>
 
                             <div class="inputOuter" id="uArea">
-                                <input type="text" id="u" name="username" class="inputstyle2" placeholder="手机/邮箱"/>
+                                <input type="text" id="u" name="username" class="inputstyle2"/>
                             </div>
                         </div>
 
@@ -52,7 +52,7 @@
 
                             <div>
                                 <img id="change_img" src="{:U('Public/verify')}">
-                                <a id="change_code" style="cursor:pointer">看不清</a>
+                                <a id="change_code" style="cursor:pointer;margin-left: 5px">看不清</a>
                             </div>
                         </div>
                         <div class="uinArea">
@@ -85,11 +85,11 @@
                 <ul class="reg_form" id="reg-ul">
                     <div id="userCue" class="cue">欢迎注册呆猫</div>
                     <li>
-                        <label for="user" class="input-tips2">用户名：</label>
+                        <label for="user" class="input-tips2">手机：</label>
 
                         <div class="inputOuter2">
-                            <input type="text" id="user" name="username" maxlength="20" class="inputstyle2"
-                                   placeholder="手机/邮箱"/>
+                            <input type="text" id="user" name="username" maxlength="40" class="inputstyle2"
+                                   placeholder="请输入手机号"/>
                         </div>
                     </li>
                     <li>
@@ -113,14 +113,24 @@
 
                         <div>
                             <img id="change_img2" src="{:U('Public/verify')}">
-                            <a id="change_code2" style="cursor:pointer">看不清</a>
+                            <a id="change_code2" style="cursor:pointer;margin-left: 5px">看不清</a>
                         </div>
                     </li>
                     <li>
                         <label for="verifycode2" class="input-tips2">验证码 : </label>
 
                         <div class="inputOuter2">
-                            <input type="text" id="verifycode2" name="verifycode2" maxlength="6" class="inputstyle2"
+                            <input type="text" id="verifycode2" placeholder="请输入图形验证码" name="verifycode2" maxlength="6"
+                                   class="inputstyle2"
+                                   size="2"/>
+                        </div>
+                    </li>
+                    <li style="display: none" id="codeli">
+                        <label for="messagecode" class="input-tips2">短信码 : </label>
+
+                        <div class="inputOuter2">
+                            <input type="text" id="messagecode" placeholder="点击获取短信验证码" name="verifycode2" maxlength="6"
+                                   class="inputstyle2"
                                    size="2"/>
                         </div>
                     </li>

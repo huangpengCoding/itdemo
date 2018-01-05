@@ -115,23 +115,23 @@
                 /* initSearchmenu('scbar', ''); */
             </script>
             <if condition="$log eq 1">
-                <a href="/Home/Center/index">个人中心</a> <a href="/Home/Login/loginout">退出</a>
+                <a href="/Home/Center/index" style="color: white;font-size: small">个人中心</a> <a
+                    href="/Home/Login/logout" style="color: white;font-size: small">退出</a>
                 <elseif condition="$log eq 0"/>
-                <a href="/Home/Login/index" style="color: white;font-size: small;">注册/登录</a>
+                <a href="/Home/Login/index" style="color: white;font-size: small">注册/登录</a>
             </if>
         </div>
     </div>
 </div>
 <div id="deanheader" style="">
-    <div class="deanwp">
+    <div class="deanwp" style="width: 1300px;">
         <div class="deanlogo">
             <h2><a href="{$system.url}" title="{$system.name}"><img src="/Public/Home/Images/{$system.logo}"
                                                                     alt="{$system.name}" border="0" width="199"
                                                                     height="58"></a></h2>
         </div>
-        <div class="deannav" style="width:650px;">
+        <div class="deannav" style="width:850px;">
             <ul>
-                <!-- by tong  -->
                 <volist name="title" id="vo">
                     <li>
                         <a href="/Home/{$vo.url}/fid/{$vo.id}" hidefocus="true" title="{$vo.name}"

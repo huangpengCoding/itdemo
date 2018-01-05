@@ -37,6 +37,14 @@ class IndexController extends Controller
         $system = $sys->where('id=1')->find();
         $this->assign('system', $system);
 
+        //log
+        if ($_SESSION['user_info']) {
+            $log = 1;
+        } else {
+            $log = 0;
+        }
+        $this->assign('log', $log);
+
         $this->display();
 
     }

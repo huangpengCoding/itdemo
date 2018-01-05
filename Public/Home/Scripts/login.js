@@ -1,5 +1,6 @@
 var FLAG_VERIFYED_LOG = false;  //验证码是否通过标识-登录tab
 var FLAG_VERIFYED_REG = false;  //验证码是否通过标识-注册tab
+var FLAG_MESSAGECODE_REG = false; //短信码是否通过标识-注册tab
 
 $(function () {
 
@@ -71,11 +72,13 @@ $(function () {
                 console.log("true");
                 FLAG_VERIFYED_REG = true;
                 $('#userCue').html('<font color="yellowgreen"><b>验证码正确</b></font>');
+                $('#codeli').show(500);
             } else {
                 //验证码输入错误
                 console.log("false");
                 FLAG_VERIFYED_REG = false;
                 $('#userCue').html('<font color="red"><b>x验证码错误</b></font>');
+                $('#codeli').hide(500);
             }
         });
     });
@@ -212,8 +215,6 @@ function check_password() {
         //        $('#userCue').html('发送错误AAA:' + jqXHR.status);
         //    }
         //})
-
-
     }
 }
 
@@ -255,6 +256,15 @@ $(document).ready(function () {
             }
         })
     });
+
+
+    //点击短信码时触发
+    $('#messagecode').blur(function () {
+
+
+    });
+
+
     // 当注册按钮点击时触发
     $('#reg').click(function () {
 
@@ -268,13 +278,13 @@ $(document).ready(function () {
         }
 
 
-        if ($('#user').val().length < 8 || $('#user').val().length > 20) {
+        if ($('#user').val().length < 8 || $('#user').val().length > 40) {
 
             $('#user').focus().css({
                 border: "1px solid red",
                 boxShadow: "0 0 2px red"
             });
-            $('#userCue').html("<font color='red'><b>×用户名位8-20字符</b></font>");
+            $('#userCue').html("<font color='red'><b>×用户名位8-40字符</b></font>");
             return false;
 
         } else {
@@ -292,16 +302,19 @@ $(document).ready(function () {
         }
         if ($('#passwd2').val() != $('#passwd').val()) {
             $('#passwd2').focus();
-            $('#userCue').html("<font color='red'><b>×两次密码不一致！aaa</b></font>");
+            $('#userCue').html("<font color='red'><b>×两次密码不一致！</b></font>");
             return false;
         }
-
 
         if (FLAG_VERIFYED_REG == false) {
             $('#userCue').html("<font color='red'><b>×验证码错误!</b></font>");
             return false;
         }
 
+        if (FLAG_MESSAGECODE_REG == false) {
+            $('#userCue').html("<font color='red'><b>×短信码错误!</b></font>");
+            return false;
+        }
 
         // 调用ajax注册用户
         $.ajax({

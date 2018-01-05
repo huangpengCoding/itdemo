@@ -25,6 +25,9 @@ class LoginController extends Controller
     {
         $user = D('Login');
         $res = $user->checkuser($_POST['username'], $_POST['password']);
+        var_dump($_POST);
+        var_dump($res);
+        exit;
         $obj = json_decode($res);
         if ($obj->status) {
             $this->redirect('Index/index');
@@ -56,5 +59,12 @@ class LoginController extends Controller
             $rst['already_reg'] = 0;
             echo json_encode($rst);
         }
+    }
+
+    //退出操作
+    public function logout()
+    {
+        unset($_SESSION['user_info']);
+        $this->redirect("Index/index");
     }
 }

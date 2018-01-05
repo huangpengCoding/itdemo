@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>积分详情 - {$system.name}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="{$system.key}"/>
+    <meta name="description" content="{$system.des}"/>
+    <link rel="stylesheet" href="__PUBLIC__/Center/css/base.css" type="text/css"/>
+    <link rel="stylesheet" href="__PUBLIC__/Center/css/common/common-less.css" type="text/css"/>
+    <link rel="stylesheet" href="__PUBLIC__/Center/component/logic/login/login-regist.css" type="text/css"/>
+    <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="__PUBLIC__/Center/css/settings.css" type="text/css"/>
+</head>
+<body>
+<div id="header">
+    <div class="page-container" id="nav" style="background-color: #DC143C">
+        <div class="g-menu-mini l">
+            <a href="#" class="menu-ctrl">
+                <i class="icon-menu"></i>
+            </a>
+            <ul class="nav-item l">
+                <li>
+                    <img src="/Public/Home/Images/banner0104.png"/>
+                </li>
+            </ul>
+        </div>
+        <div id="login-area">
+            <ul class="clearfix logined">
+                <li>
+                    <a id="nc">欢迎你 {$name}</a>
+                </li>
+                <li>
+                    <a href="__MODULE__/Login/loginout">退出登录</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="main">
+    <div class="wcontainer set-space-cont clearfix">
+        <div class="setting-left l">
+            <ul class="wrap-boxes">
+                <li>
+                    <a href="__URL__/index">个人资料</a>
+                </li>
+                <li>
+                    <a href="__URL__/phone">手机设置</a>
+                </li>
+                <li>
+                    <a href="__URL__/email">邮箱设置</a>
+                </li>
+                <li class="nav-active">
+                    <a href="__URL__/integral" class="onactive">积分猫豆</a>
+                </li>
+                <li>
+                    <a href="__URL__/password">修改密码</a>
+                </li>
+            </ul>
+        </div>
+        <div class="setting-right ">
+            <div class="setting-right-wrap wrap-boxes settings">
+
+                <div id="setting-profile" class="setting-wrap setting-profile">
+                    您现在有积分：{$num.inte} 个<br/>
+                    您现在有Y豆：{$num.ynum} 个
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<div id="footer" style="background-color: #DC143C">
+    <div class="waper">
+        <div class="footerwaper clearfix">
+            <div class="followus r">
+                <a class="followus-weixin" href="javascript:;" target="_blank" title="微信">
+                    <div class="flw-weixin-box"></div>
+                </a>
+                <a class="followus-weibo" href="http://weibo.com/u/3306361973" target="_blank" title="新浪微博"></a>
+                <a class="followus-qzone" href="http://user.qzone.qq.com/1059809142/" target="_blank" title="QQ空间"></a>
+            </div>
+            <div class="footer_intro l">
+                <div class="footer_link">
+                    <ul>
+                        <volist name="title" id="vo">
+                            <li>
+                                <a href="__MODULE__/{$vo.url}/fid/{$vo.id}" hidefocus="true" title="{$vo.name}">{$vo.name}</a>
+                            </li>
+                        </volist>
+                    </ul>
+                </div>
+                <p>{$system.banquan}{$system.beian}{$system.tongji}</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

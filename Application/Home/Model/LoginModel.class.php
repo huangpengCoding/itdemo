@@ -22,6 +22,8 @@ class LoginModel extends Model
         //检测登录错误是否次数小于3次
         if ($this->check_three($login_type, $username) < 3) {
             $map[$login_type] = $username;
+            var_dump($map);
+            exit;
             if ($res = $this->where($map)->select()) {
                 var_dump($res);
                 //存在用户验证密码是否正确
