@@ -23,6 +23,36 @@ class CenterController extends Controller
         $this->display();
     }
 
+    /**
+     * 保存个人信息
+     */
+    public function storage()
+    {
+        $this->verification();
+        $user = D('it_user_info');
+        $data = $user->save($_POST);
+        $this->ajaxReturn($data);
+    }
+
+    /**
+     * 更新个人信息
+     */
+    public function newcenter()
+    {
+        $this->verification();
+        $user = D('it_user_info');
+        $user = $user->where('id=' . $_POST['id'])->find();
+        if (!empty($user['name'])) {
+            $name = $user['name'];
+        } elseif (!empty($user['phone'])) {
+            $name = $user['phone'];
+        } else {
+            $name = '非法操作';
+        }
+        $data['success'] = '1';
+        $data['name'] = $name;
+        $this->ajaxReturn($data);
+    }
 
     /**
      * 验证

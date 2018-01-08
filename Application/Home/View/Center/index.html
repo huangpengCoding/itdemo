@@ -21,7 +21,7 @@
                 <i class="icon-menu"></i>
             </a>
             <ul class="nav-item l">
-                <li>
+                <li  style="margin-left: 30px">
                     <img src="/Public/Home/Images/banner0104.png"/>
                 </li>
             </ul>
@@ -29,10 +29,10 @@
         <div id="login-area">
             <ul class="clearfix logined">
                 <li>
-                    <a id="nc">欢迎你 {$name}</a>
+                    <a id="nc" style="color: white;">欢迎你 {$name}</a>
                 </li>
                 <li>
-                    <a href="__MODULE__/Login/loginout">退出登录</a>
+                    <a href="__MODULE__/Login/loginout" style="color: white;">退出登录</a>
                 </li>
             </ul>
         </div>
@@ -51,9 +51,9 @@
                 <li>
                     <a href="__URL__/phone">手机设置</a>
                 </li>
-                <li>
-                    <a href="__URL__/email">邮箱设置</a>
-                </li>
+                <!--<li>-->
+                <!--<a href="__URL__/email">邮箱设置</a>-->
+                <!--</li>-->
                 <li>
                     <a href="__URL__/integral">积分猫豆</a>
                 </li>
@@ -75,16 +75,6 @@
                             <div class="rlf-group">
                                 <input type="text" name="nickname" id="nick" class="rlf-input rlf-input-nick"
                                        placeholder="请输入昵称" value="{$user.name}"/>
-
-                                <p class="rlf-tip-wrap"></p>
-                            </div>
-                        </div>
-                        <div class="wlfg-wrap">
-                            <label class="label-name" for="province-select">地址</label>
-
-                            <div class="rlf-group profile-address">
-                                <input type="text" name="address" id="address" class="rlf-input rlf-input-address"
-                                       placeholder="请输入地址" value="{$user.address}"/>
 
                                 <p class="rlf-tip-wrap"></p>
                             </div>
@@ -141,12 +131,13 @@
                     <ul>
                         <volist name="title" id="vo">
                             <li>
-                                <a href="__MODULE__/{$vo.url}/fid/{$vo.id}" hidefocus="true" title="{$vo.name}">{$vo.name}</a>
+                                <a href="__MODULE__/{$vo.url}/fid/{$vo.id}" hidefocus="true" title="{$vo.name}"
+                                   style="color:white;">{$vo.name}</a>
                             </li>
                         </volist>
                     </ul>
                 </div>
-                <p>{$system.banquan}{$system.beian}{$system.tongji}</p>
+                <p style="color:white;">{$system.banquan}{$system.beian}{$system.tongji}</p>
             </div>
         </div>
     </div>
@@ -161,14 +152,15 @@
                 data: {
                     id: $("#id").val(),
                     name: $("#nick").val(),
-                    address: $("#address").val(),
                     sex: $(".radio:checked").val(),
                     signature: $("#aboutme").val(),
                 },
                 success: function (data) {
                     if (data) {
+                        alert('保存成功!')
                         $("#profile-submit").html("保存成功");
                     } else {
+                        alert('保存失败,请重试!')
                         $("#profile-submit").html("保存失败");
                     }
                 },

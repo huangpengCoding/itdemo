@@ -18,14 +18,12 @@ class LoginModel extends Model
     public function checkuser($username, $password)
     {
         //检测账号类型
-        $login_type = $this->phone_or_email($username);
+//        $login_type = $this->phone_or_email($username);
+        $login_type = 'phone';
         //检测登录错误是否次数小于3次
         if ($this->check_three($login_type, $username) < 3) {
             $map[$login_type] = $username;
-            var_dump($map);
-            exit;
             if ($res = $this->where($map)->select()) {
-                var_dump($res);
                 //存在用户验证密码是否正确
                 if ($res[0]['password'] == md5($password . 'itdemohp')) {
                     //登录成功,写入session,把记录登录错误的计数字段清0
@@ -61,15 +59,15 @@ class LoginModel extends Model
         }
     }
 
-    // 判断是手机还是邮箱
-    public function phone_or_email($username)
-    {
-        if (preg_match("/^[0-9a-zA-Z]+@(([0-9a-zA-Z]+)[.])+[a-z]{2,4}$/i", $username)) {
-            return 'email';
-        } else {
-            return 'phone';
-        }
-    }
+//    // 判断是手机还是邮箱
+//    public function phone_or_email($username)
+//    {
+//        if (preg_match("/^[0-9a-zA-Z]+@(([0-9a-zA-Z]+)[.])+[a-z]{2,4}$/i", $username)) {
+//            return 'email';
+//        } else {
+//            return 'phone';
+//        }
+//    }
 
     // 检测用户登录错误次数
     public function check_three($login_type, $username)

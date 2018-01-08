@@ -25,9 +25,6 @@ class LoginController extends Controller
     {
         $user = D('Login');
         $res = $user->checkuser($_POST['username'], $_POST['password']);
-        var_dump($_POST);
-        var_dump($res);
-        exit;
         $obj = json_decode($res);
         if ($obj->status) {
             $this->redirect('Index/index');
