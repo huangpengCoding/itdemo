@@ -13,6 +13,11 @@ class DetailController extends Controller
 {
     public function single($id)
     {
+
+        //标题
+        $title = M('it_type')->field('id, name')->where('pid=0')->order('weight desc')->select();
+        $this->assign('title', $title);
+
         //查看当前页面下的所有评论
 
         //热门搜索 专题推荐

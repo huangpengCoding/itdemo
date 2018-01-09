@@ -57,7 +57,7 @@
     </div>
 </div>
 <div id="deanheader" style="">
-    <div class="deanwp">
+    <div class="deanwp" style="width:850px;">
         <div class="deanlogo">
             <h2><a href="{$system.url}" title="{$system.name}"><img src="/Public/Home/Images/{$system.logo}"
                                                                     alt="{$system.name}" border="0" width="199"
@@ -65,10 +65,10 @@
         </div>
         <div class="deannav">
             <ul>
-                <volist name="title" id="vp">
-                    <li><a href="/Home/{$vp.url}/fid/{$vp.id}" hidefocus="true" title="{$vp.name}"
-                        <if condition="$vp.id eq $id">class="cur"</if>
-                        >{$vp.name}<span>{$vp.seo_remark}</span></a></li>
+                <volist name="title" id="vo">
+                    <li><a href="/Home/{$vo.url}/fid/{$vo.id}" hidefocus="true" title="{$vo.name}"
+                        <if condition="$vo.id eq $id">class="cur"</if>
+                        >{$vo.name}<span>{$vo.seo_remark}</span></a></li>
                 </volist>
             </ul>
         </div>
